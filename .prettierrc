@@ -1,5 +1,4 @@
 {
-  "eslintIntegration": true,
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
   "printWidth": 80,
