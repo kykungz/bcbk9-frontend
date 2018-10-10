@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Route } from 'react-router-dom'
 
 import Home from '../pages/Home'
@@ -12,9 +12,9 @@ const routes = [
 ]
 
 export default () => (
-  <Fragment>
+  <>
     {routes.map(route => (
       <Route key={route.path} {...route} />
     ))}
-  </Fragment>
+  </>
 )
