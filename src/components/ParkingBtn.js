@@ -14,7 +14,6 @@ const Button = styled.div`
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-
   font-family: 'Century Gothic', 'Prompt';
   font-weight: bold;
   font-size: 48px;
@@ -32,7 +31,11 @@ class ParkingBtn extends React.Component {
       default:
         break
     }
-    return <Button style={style}>{this.props.children}</Button>
+    return (
+      <Button style={style} {...this.props}>
+        {this.props.children}
+      </Button>
+    )
   }
 }
 
