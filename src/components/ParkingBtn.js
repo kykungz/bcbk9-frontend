@@ -20,17 +20,16 @@ const Button = styled.div`
   font-size: 48px;
 `
 class ParkingBtn extends React.Component {
-  constructor(props) {
-    super(props)
-    this.style = {}
-    switch (props.size) {
+  render() {
+    let style = {}
+    switch (this.props.size) {
       case 'small':
-        this.style = { width: '161px', height: '46px', fontSize: '24px' }
+        style = { width: '161px', height: '46px', fontSize: '24px' }
+        break
+      default:
         break
     }
-  }
-  render() {
-    return <Button style={this.style}>{this.props.children}</Button>
+    return <Button style={style}>{this.props.children}</Button>
   }
 }
 
