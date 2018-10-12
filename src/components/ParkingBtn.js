@@ -26,6 +26,9 @@ class ParkingBtn extends React.Component {
       case 'small':
         style = { width: '161px', height: '46px', fontSize: '24px' }
         break
+      case 'medium':
+        style = { width: '242px', height: '69px', fontSize: '36px' }
+        break
       default:
         break
     }
