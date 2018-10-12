@@ -20,9 +20,6 @@ const SContent = styled.div`
   padding-bottom: 15px;
 `
 class Content extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
     return (
       <Section {...this.props}>
