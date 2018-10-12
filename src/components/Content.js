@@ -14,6 +14,7 @@ const STitle = styled.h3`
   margin-left: 60px;
 `
 const SContent = styled.div`
+  font-family: 'Century Gothic', 'Prompt';
   margin-left: 60px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -24,7 +25,7 @@ class Content extends React.Component {
   }
   render() {
     return (
-      <Section>
+      <Section {...this.props}>
         <STitle>{this.props.title}</STitle>
         <SContent>{this.props.children}</SContent>
       </Section>
