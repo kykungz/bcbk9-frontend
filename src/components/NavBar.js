@@ -2,15 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 const Container = styled.div`
   width: 100vw;
-`
-const MenuGroup = styled.div`
-  transform: translateX(-50%);
-  margin-left: 50%;
-  overflow: hidden;
+  display: flex;
 `
 const Menu = styled.div`
-  padding: 25px 40px 10px 40px;
-  float: ${prop => prop.float};
+  flex: 1;
+  text-align: center;
+  padding: 25px 0px 15px 0px;
 `
 const MenuName = styled.span`
   color: #d63031;
@@ -18,19 +15,17 @@ const MenuName = styled.span`
 
 export default () => (
   <Container>
-    <MenuGroup>
-      <Menu float="left">
-        <MenuName>TIMETABLE</MenuName>
-      </Menu>
-      <Menu float="left">
-        <MenuName>LOCATION</MenuName>
-      </Menu>
-      <Menu float="right">
-        <MenuName>SPONSOR</MenuName>
-      </Menu>
-      <Menu float="right">
-        <MenuName>SESSIONS</MenuName>
-      </Menu>
-    </MenuGroup>
+    <Menu>
+      <MenuName>TIMETABLE</MenuName>
+    </Menu>
+    <Menu>
+      <MenuName>LOCATION</MenuName>
+    </Menu>
+    <Menu>
+      <MenuName>SPONSOR</MenuName>
+    </Menu>
+    <Menu>
+      <MenuName>SESSIONS</MenuName>
+    </Menu>
   </Container>
 )
