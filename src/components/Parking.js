@@ -38,6 +38,29 @@ const OptionName = styled.h3`
   margin: 0;
 `
 
+const options = {
+  free: [
+    {
+      name: 'Rapee Sagarik Building',
+      location: 'Behind Rapee Sagarik Building',
+      capacity: 40,
+    },
+  ],
+  paid: [
+    {
+      name: 'Ngam Wong Wan 1 Parking Building',
+      location: 'Ngam Wong Wan 1 entrance',
+      capacity: 289,
+    },
+
+    {
+      name: 'Ngam Wong Wan 2 Parking Building',
+      location: 'Ngam Wong Wan 2 entrance',
+      capacity: 192,
+    },
+  ],
+}
+
 class Parking extends React.Component {
   constructor(props) {
     super(props)
@@ -49,28 +72,6 @@ class Parking extends React.Component {
     this.setState({ view: type })
   }
   render() {
-    const options = {
-      free: [
-        {
-          name: 'Rapee Sagarik Building',
-          location: 'Behind Rapee Sagarik Building',
-          capacity: 40,
-        },
-      ],
-      paid: [
-        {
-          name: 'Ngam Wong Wan 1 Parking Building',
-          location: 'Ngam Wong Wan 1 entrance',
-          capacity: 289,
-        },
-
-        {
-          name: 'Ngam Wong Wan 2 Parking Building',
-          location: 'Ngam Wong Wan 2 entrance',
-          capacity: 192,
-        },
-      ],
-    }
     let Options = ''
     if (this.state.view) {
       Options = (
