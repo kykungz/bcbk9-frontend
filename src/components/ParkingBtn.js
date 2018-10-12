@@ -8,6 +8,7 @@ const Button = styled.div`
   background-size: contain;
   width: 321px;
   height: 92px;
+  margin: 10px;
   color: white;
   display: inline-flex;
   align-items: center;
@@ -21,16 +22,11 @@ const Button = styled.div`
 class ParkingBtn extends React.Component {
   constructor(props) {
     super(props)
+    this.style = {}
     switch (props.size) {
       case 'small':
         this.style = { width: '161px', height: '46px', fontSize: '24px' }
         break
-      default:
-        this.style = {
-          width: props.width + 'px',
-          height: props.height + 'px',
-          fontSize: props.fontSize + 'px',
-        }
     }
   }
   render() {
