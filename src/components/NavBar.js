@@ -5,6 +5,7 @@ import Hamburger from '../assets/hamburger.svg'
 import FacebookIcon from '../assets/facebookIcon.png'
 import TwitterIcon from '../assets/twitterIcon.svg'
 const Container = styled.div`
+  positio: fixed;
   width: 100vw;
   display: flex;
   background: url(${prop => prop.src});
@@ -35,13 +36,24 @@ const Menu = styled.div`
 `
 const MenuName = styled.span`
   font-weight: 600;
-  color: #ab0057;
   transition: 0.6s;
   @media (max-width: 600px) {
     padding-top: 20px;
-    color: white;
     box-sizing: border-box;
     opacity: ${prop => (prop.isDown ? 1 : 0)};
+  }
+`
+const A = styled.a`
+  color: #ab0057;
+  &:hover {
+    text-decoration: none;
+    color: #ab0057;
+  }
+  @media (max-width: 600px) {
+    color: white;
+    &:hover {
+      color: white;
+    }
   }
 `
 const TopDropDown = styled.div`
@@ -52,7 +64,7 @@ const TopDropDown = styled.div`
     display: block;
   }
 `
-const Button = styled.button`
+const Button = styled.a`
   background: url(${prop => prop.url});
   background-position: center;
   background-size: ${prop => prop.size};
@@ -80,20 +92,28 @@ export default class extends Component {
           float="left"
           size="80% 80%"
         />
-        <Button url={TwitterIcon} float="right" size="50% 50%" />
-        <Button url={FacebookIcon} float="right" size="50% 50%" />
+        <Button url={TwitterIcon} href="/" float="right" size="50% 50%" />
+        <Button url={FacebookIcon} href="/" float="right" size="50% 50%" />
       </TopDropDown>
       <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>TIMETABLE</MenuName>
+        <MenuName isDown={this.state.isDown}>
+          <A href="/">TIMETABLE</A>
+        </MenuName>
       </Menu>
       <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>LOCATION</MenuName>
+        <MenuName isDown={this.state.isDown}>
+          <A href="/">LOCATION</A>
+        </MenuName>
       </Menu>
       <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>SPONSOR</MenuName>
+        <MenuName isDown={this.state.isDown}>
+          <A href="/">SPONSOR</A>
+        </MenuName>
       </Menu>
       <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>SESSIONS</MenuName>
+        <MenuName isDown={this.state.isDown}>
+          <A href="/">SESSIONS</A>
+        </MenuName>
       </Menu>
     </Container>
   )
