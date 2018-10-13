@@ -1,42 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import parking_button from '../assets/parking_button.png'
-const Button = styled.div`
+const Button = styled.button`
   cursor: pointer;
-  background: url(${parking_button}) no-repeat center;
-  background-size: contain;
-  width: 321px;
-  height: 92px;
+  background-image: linear-gradient(to right, #9a1e50 0%, #f09278 60%);
+  border: 0;
+  border-radius: 15px;
+  padding: 10px 55px;
   margin: 10px;
+
   color: white;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   text-transform: uppercase;
-  font-family: 'Century Gothic', 'Prompt';
   font-weight: bold;
-  font-size: 48px;
-`
-class ParkingBtn extends React.Component {
-  render() {
-    let style = {}
-    switch (this.props.size) {
-      case 'small':
-        style = { width: '161px', height: '46px', fontSize: '24px' }
-        break
-      case 'medium':
-        style = { width: '242px', height: '69px', fontSize: '36px' }
-        break
-      default:
-        break
-    }
-    return (
-      <Button style={style} {...this.props}>
-        {this.props.children}
-      </Button>
-    )
+  font-size: 24px;
+
+  &:focus {
+    outline: 0;
   }
-}
+`
+const ParkingBtn = props => <Button {...props}>{props.children}</Button>
 
 export default ParkingBtn
