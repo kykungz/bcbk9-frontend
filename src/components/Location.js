@@ -6,13 +6,16 @@ const Container = styled.div`
   height: 360px;
   width: 100vw;
   @media (max-width: 650px) {
-    height: 200px;
+    height: 400px;
   }
 `
 const Map = styled.iframe`
   width: 80%;
   height: 100%;
   border: none;
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `
 export default () => (
   <Container>
