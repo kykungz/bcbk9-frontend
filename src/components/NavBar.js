@@ -4,8 +4,8 @@ import Background from '../assets/navbar.png'
 import Hamburger from '../assets/hamburger.svg'
 import FacebookIcon from '../assets/facebookIcon.png'
 import TwitterIcon from '../assets/twitterIcon.svg'
-const Container = styled.div`
-  positio: fixed;
+const MenuContainer = styled.div`
+  position: fixed;
   width: 100vw;
   display: flex;
   background: url(${prop => prop.src});
@@ -13,17 +13,20 @@ const Container = styled.div`
   background-position: center;
   height: 130px;
   transition: 0.6s;
+  box-sizing: border-box;
   padding: 0px 100px;
+  justify-content: space-around;
+  transition: width 0, all 0.6s;
   @media (max-width: 650px) {
+    top: ${prop => (prop.isDown ? '60px' : '-300px')};
     padding: 0px;
-    height: ${prop => (prop.isDown ? '360px' : '60px')};
+    height: 300px;
     flex-direction: column;
     background: none;
     background-image: linear-gradient(#ef867a, #c93267);
   }
 `
 const Menu = styled.div`
-  flex: 1;
   text-align: center;
   padding: 30px 0px 40px 0px;
   transition: 0.6s;
@@ -32,22 +35,20 @@ const Menu = styled.div`
   @media (max-width: 650px) {
     justify-content: left;
     padding: 0px 0px 0px 30px;
-    flex: ${prop => (prop.isDown ? 1 : 0)};
   }
 `
 const MenuName = styled.span`
   font-weight: 600;
   transition: 0.6s;
   @media (max-width: 650px) {
-    padding-top: 20px;
+    padding-top: 5px;
     box-sizing: border-box;
-    opacity: ${prop => (prop.isDown ? 1 : 0)};
   }
 `
 const A = styled.a`
   color: #ab0057;
+  text-decoration: none;
   &:hover {
-    text-decoration: none;
     color: #ab0057;
   }
   @media (max-width: 650px) {
@@ -58,9 +59,12 @@ const A = styled.a`
   }
 `
 const TopDropDown = styled.div`
-  flex: 1;
+  position: fixed;
+  height: 60px;
+  width: 100vw;
   background-color: white;
   display: none;
+  z-index: 1000;
   @media (max-width: 650px) {
     display: block;
   }
@@ -81,11 +85,10 @@ export default class extends Component {
     this.state = { isDown: false }
   }
   onClickBurger = () => {
-    console.log(this.state.isDown)
     this.setState({ isDown: !this.state.isDown })
   }
   render = () => (
-    <Container src={Background} isDown={this.state.isDown}>
+    <>
       <TopDropDown>
         <Button
           onClick={this.onClickBurger}
@@ -96,31 +99,33 @@ export default class extends Component {
         <Button url={TwitterIcon} href="/" float="right" size="50% 50%" />
         <Button url={FacebookIcon} href="/" float="right" size="50% 50%" />
       </TopDropDown>
-      <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>
-          <A href="/">TIMETABLE</A>
-        </MenuName>
-      </Menu>
-      <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>
-          <A href="/">LOCATION</A>
-        </MenuName>
-      </Menu>
-      <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>
-          <A href="/">SPONSOR</A>
-        </MenuName>
-      </Menu>
-      <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>
-          <A href="/">FAQ</A>
-        </MenuName>
-      </Menu>
-      <Menu isDown={this.state.isDown}>
-        <MenuName isDown={this.state.isDown}>
-          <A href="/">SESSIONS</A>
-        </MenuName>
-      </Menu>
-    </Container>
+      <MenuContainer src={Background} isDown={this.state.isDown}>
+        <Menu isDown={this.state.isDown}>
+          <MenuName isDown={this.state.isDown}>
+            <A href="/">TIMETABLE</A>
+          </MenuName>
+        </Menu>
+        <Menu isDown={this.state.isDown}>
+          <MenuName isDown={this.state.isDown}>
+            <A href="/">LOCATION</A>
+          </MenuName>
+        </Menu>
+        <Menu isDown={this.state.isDown}>
+          <MenuName isDown={this.state.isDown}>
+            <A href="/">SPONSOR</A>
+          </MenuName>
+        </Menu>
+        <Menu isDown={this.state.isDown}>
+          <MenuName isDown={this.state.isDown}>
+            <A href="/">FAQ</A>
+          </MenuName>
+        </Menu>
+        <Menu isDown={this.state.isDown}>
+          <MenuName isDown={this.state.isDown}>
+            <A href="/">SESSIONS</A>
+          </MenuName>
+        </Menu>
+      </MenuContainer>
+    </>
   )
 }
