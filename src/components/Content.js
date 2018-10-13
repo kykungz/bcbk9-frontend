@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import './Content.scss'
 import line05 from '../assets/line05.png'
 const Section = styled.div`
   margin-bottom: 0px;
   background: url(${line05}) no-repeat top left;
+  background-size: 28px;
 `
 const STitle = styled.h3`
   font-family: 'Century Gothic', 'Prompt';
@@ -17,14 +19,14 @@ const SContent = styled.div`
   font-family: 'Century Gothic', 'Prompt';
   margin-left: 60px;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 50px;
 `
 class Content extends React.Component {
   render() {
     return (
-      <Section {...this.props}>
+      <Section>
         <STitle>{this.props.title}</STitle>
-        <SContent>{this.props.children}</SContent>
+        <SContent className="SContent">{this.props.children}</SContent>
       </Section>
     )
   }
