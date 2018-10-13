@@ -13,9 +13,10 @@ const Container = styled.div`
   background-position: center;
   height: 130px;
   transition: 0.6s;
-  @media (max-width: 600px) {
-    height: 300px;
-    height: ${prop => (prop.isDown ? '300px' : '60px')};
+  padding: 0px 100px;
+  @media (max-width: 650px) {
+    padding: 0px;
+    height: ${prop => (prop.isDown ? '360px' : '60px')};
     flex-direction: column;
     background: none;
     background-image: linear-gradient(#ef867a, #c93267);
@@ -28,7 +29,7 @@ const Menu = styled.div`
   transition: 0.6s;
   display: flex;
   justify-content: center;
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     justify-content: left;
     padding: 0px 0px 0px 30px;
     flex: ${prop => (prop.isDown ? 1 : 0)};
@@ -37,7 +38,7 @@ const Menu = styled.div`
 const MenuName = styled.span`
   font-weight: 600;
   transition: 0.6s;
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     padding-top: 20px;
     box-sizing: border-box;
     opacity: ${prop => (prop.isDown ? 1 : 0)};
@@ -49,7 +50,7 @@ const A = styled.a`
     text-decoration: none;
     color: #ab0057;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     color: white;
     &:hover {
       color: white;
@@ -60,7 +61,7 @@ const TopDropDown = styled.div`
   flex: 1;
   background-color: white;
   display: none;
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     display: block;
   }
 `
@@ -108,6 +109,11 @@ export default class extends Component {
       <Menu isDown={this.state.isDown}>
         <MenuName isDown={this.state.isDown}>
           <A href="/">SPONSOR</A>
+        </MenuName>
+      </Menu>
+      <Menu isDown={this.state.isDown}>
+        <MenuName isDown={this.state.isDown}>
+          <A href="/">FAQ</A>
         </MenuName>
       </Menu>
       <Menu isDown={this.state.isDown}>
