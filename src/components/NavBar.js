@@ -15,7 +15,6 @@ const MenuContainer = styled.div`
   transition: 0.6s;
   box-sizing: border-box;
   padding: 0px 100px;
-  justify-content: space-around;
   transition: width 0, all 0.6s;
   @media (max-width: 650px) {
     top: ${prop => (prop.isDown ? '60px' : '-300px')};
@@ -27,6 +26,7 @@ const MenuContainer = styled.div`
   }
 `
 const Menu = styled.div`
+  flex: 1;
   text-align: center;
   padding: 30px 0px 40px 0px;
   transition: 0.6s;
@@ -41,7 +41,7 @@ const MenuName = styled.span`
   font-weight: 600;
   transition: 0.6s;
   @media (max-width: 650px) {
-    padding-top: 5px;
+    padding-top: 20px;
     box-sizing: border-box;
   }
 `
@@ -79,11 +79,25 @@ const Button = styled.a`
   height: 60px;
   border: none;
 `
+
+const menuGroup = [
+  { name: 'TIMETABLE', url: '/' },
+  { name: 'LOCATION', url: '/' },
+  { name: 'SPONSOR', url: '/' },
+  { name: 'FAQ', url: '/' },
+  { name: 'SESSIONS', url: '/' },
+]
+
+const menu = (name, url) => (
+  <Menu>
+    <MenuName>
+      <A href={url}>{name}</A>
+    </MenuName>
+  </Menu>
+)
+
 export default class extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { isDown: false }
-  }
+  state = { isDown: false }
   onClickBurger = () => {
     this.setState({ isDown: !this.state.isDown })
   }
@@ -100,31 +114,7 @@ export default class extends Component {
         <Button url={FacebookIcon} href="/" float="right" size="50% 50%" />
       </TopDropDown>
       <MenuContainer src={Background} isDown={this.state.isDown}>
-        <Menu isDown={this.state.isDown}>
-          <MenuName isDown={this.state.isDown}>
-            <A href="/">TIMETABLE</A>
-          </MenuName>
-        </Menu>
-        <Menu isDown={this.state.isDown}>
-          <MenuName isDown={this.state.isDown}>
-            <A href="/">LOCATION</A>
-          </MenuName>
-        </Menu>
-        <Menu isDown={this.state.isDown}>
-          <MenuName isDown={this.state.isDown}>
-            <A href="/">SPONSOR</A>
-          </MenuName>
-        </Menu>
-        <Menu isDown={this.state.isDown}>
-          <MenuName isDown={this.state.isDown}>
-            <A href="/">FAQ</A>
-          </MenuName>
-        </Menu>
-        <Menu isDown={this.state.isDown}>
-          <MenuName isDown={this.state.isDown}>
-            <A href="/">SESSIONS</A>
-          </MenuName>
-        </Menu>
+        {menuGroup.map(e => menu(e.name, e.url))}
       </MenuContainer>
     </>
   )
