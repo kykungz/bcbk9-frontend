@@ -4,13 +4,36 @@ import styled from 'styled-components'
 import Content from './Content'
 import PrimaryBtn from './PrimaryBtn'
 
-const Col = styled.div`
+const ParkingTypes = styled.div`
+  position: relative;
+  float: left;
+  width: 30%;
+  @media (max-width: 650px) {
+    width: 100%;
+    display: inline-block;
+    .hidden {
+      display: none;
+    }
+  }
+`
+const Options = styled.div`
   position: relative;
   float: left;
   width: 50%;
+  margin-left: 7%;
+  @media (max-width: 650px) {
+    width: 80%;
+    display: inline-block;
+    margin-left: 10px;
+  }
 `
 const Row = styled.div`
-  margin-bottom: 10px;
+  padding-bottom: 30px;
+
+  @media (max-width: 650px) {
+    width: 50%;
+    padding-bottom: 10px;
+  }
 `
 const Spacer = styled.div`
   clear: both;
@@ -24,6 +47,7 @@ const Option = styled.div`
 `
 const Tooltip = styled.div`
   background: rgba(0, 0, 0, 0.5);
+  max-width: 250px;
   color: white;
   font-family: 'Century Gothic', 'Prompt';
   font-size: 16px;
@@ -32,12 +56,24 @@ const Tooltip = styled.div`
   &::after {
     content: ' ';
     position: absolute;
-    top: ${props => props.top}%;
+    top: ${props => props.top};
     right: 100%; /* To the left of the tooltip */
     margin-top: -10px;
     border-width: 10px;
     border-style: solid;
     border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
+  }
+  @media (max-width: 650px) {
+    padding: 10px 10px;
+    max-width: none;
+    &::after {
+      top: initial;
+      right: initial;
+      bottom: 100%;
+      left: 25%;
+      margin-left: -10px;
+      border-color: transparent transparent rgba(0, 0, 0, 0.5) transparent;
+    }
   }
 `
 Tooltip.defaultProps = { top: 25 }
@@ -74,7 +110,7 @@ class Parking extends React.Component {
   }
   getOptions(type) {
     return options[type] ? (
-      <Tooltip top={type == 'free' ? 25 : 60}>
+      <Tooltip top={type == 'free' ? '25%' : '130px'}>
         {options[type].map(option => (
           <Option key={option.name}>
             <OptionName>{option.name}</OptionName>
@@ -86,17 +122,21 @@ class Parking extends React.Component {
       </Tooltip>
     ) : null
   }
-  handleButton(type) {
+  changeView(type) {
     this.setState({ view: type })
   }
   ParkingType(type) {
     return (
-      <Row>
+      <Row onMouseOut={() => this.changeView('')}>
         <PrimaryBtn
           full
-          onClick={() => this.handleButton(type)}
-          onMouseOver={() => this.handleButton(type)}
-          onMouseOut={() => this.handleButton('')}
+          onMouseOver={() => this.changeView(type)}
+          onClick={() => this.changeView(type)}
+          className={
+            type == 'paid' && this.state.view && this.state.view != type
+              ? 'hidden'
+              : ''
+          }
         >
           {type}
         </PrimaryBtn>
@@ -105,16 +145,14 @@ class Parking extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Content title="Parking">
-          <Col>
-            {this.ParkingType('free')}
-            {this.ParkingType('paid')}
-          </Col>
-          <Col>{this.getOptions(this.state.view)}</Col>
-          <Spacer />
-        </Content>
-      </div>
+      <Content title="Parking">
+        <ParkingTypes>
+          {this.ParkingType('free')}
+          {this.ParkingType('paid')}
+        </ParkingTypes>
+        <Options>{this.getOptions(this.state.view)}</Options>
+        <Spacer />
+      </Content>
     )
   }
 }
