@@ -6,10 +6,9 @@ const Button = styled.button`
   background-image: linear-gradient(to right, #9a1e50 0%, #f09278 60%);
   border: 0;
   border-radius: 15px;
-  padding: 10px 55px;
+  padding: 10px 15px;
   margin: 10px;
-
-  color: white;
+  ${props => (props.full ? 'width: 100%;' : '')} color: white;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
@@ -19,6 +18,6 @@ const Button = styled.button`
     outline: 0;
   }
 `
-const ParkingBtn = props => <Button {...props}>{props.children}</Button>
+const PrimaryBtn = props => <Button {...props}>{props.children}</Button>
 
-export default ParkingBtn
+export default PrimaryBtn
