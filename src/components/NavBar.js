@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import Background from '../assets/navbar.png'
 import Hamburger from '../assets/hamburger.svg'
@@ -11,28 +11,37 @@ const Container = styled.div`
   background-size: cover;
   background-position: center;
   height: 130px;
+  transition: 0.6s;
   @media (max-width: 600px) {
     height: 300px;
+    height: ${prop => (prop.isDown ? '300px' : '60px')};
     flex-direction: column;
     background: none;
-    background-image: linear-gradient(#ff7675, #d63031);
+    background-image: linear-gradient(#ef867a, #c93267);
   }
 `
 const Menu = styled.div`
   flex: 1;
   text-align: center;
   padding: 30px 0px 40px 0px;
+  transition: 0.6s;
+  display: flex;
+  justify-content: center;
   @media (max-width: 600px) {
-    display: flex;
+    justify-content: left;
     padding: 0px 0px 0px 30px;
+    flex: ${prop => (prop.isDown ? 1 : 0)};
   }
 `
 const MenuName = styled.span`
-  color: #d63031;
+  font-weight: 600;
+  color: #ab0057;
+  transition: 0.6s;
   @media (max-width: 600px) {
     padding-top: 20px;
     color: white;
     box-sizing: border-box;
+    opacity: ${prop => (prop.isDown ? 1 : 0)};
   }
 `
 const TopDropDown = styled.div`
@@ -53,24 +62,39 @@ const Button = styled.button`
   height: 60px;
   border: none;
 `
-export default () => (
-  <Container src={Background}>
-    <TopDropDown>
-      <Button url={Hamburger} float="left" size="80% 80%" />
-      <Button url={TwitterIcon} float="right" size="50% 50%" />
-      <Button url={FacebookIcon} float="right" size="50% 50%" />
-    </TopDropDown>
-    <Menu>
-      <MenuName>TIMETABLE</MenuName>
-    </Menu>
-    <Menu>
-      <MenuName>LOCATION</MenuName>
-    </Menu>
-    <Menu>
-      <MenuName>SPONSOR</MenuName>
-    </Menu>
-    <Menu>
-      <MenuName>SESSIONS</MenuName>
-    </Menu>
-  </Container>
-)
+export default class extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { isDown: false }
+  }
+  onClickBurger = () => {
+    console.log(this.state.isDown)
+    this.setState({ isDown: !this.state.isDown })
+  }
+  render = () => (
+    <Container src={Background} isDown={this.state.isDown}>
+      <TopDropDown>
+        <Button
+          onClick={this.onClickBurger}
+          url={Hamburger}
+          float="left"
+          size="80% 80%"
+        />
+        <Button url={TwitterIcon} float="right" size="50% 50%" />
+        <Button url={FacebookIcon} float="right" size="50% 50%" />
+      </TopDropDown>
+      <Menu isDown={this.state.isDown}>
+        <MenuName isDown={this.state.isDown}>TIMETABLE</MenuName>
+      </Menu>
+      <Menu isDown={this.state.isDown}>
+        <MenuName isDown={this.state.isDown}>LOCATION</MenuName>
+      </Menu>
+      <Menu isDown={this.state.isDown}>
+        <MenuName isDown={this.state.isDown}>SPONSOR</MenuName>
+      </Menu>
+      <Menu isDown={this.state.isDown}>
+        <MenuName isDown={this.state.isDown}>SESSIONS</MenuName>
+      </Menu>
+    </Container>
+  )
+}
