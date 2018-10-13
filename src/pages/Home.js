@@ -22,10 +22,7 @@ class Home extends React.Component {
           </p>
         </Content>
         <Content title="Participants">
-          <p>
-            Everyone is invited! No matter who you are, we believe all of you
-            are the essence of our event.
-          </p>
+          <p>Everyone! Partipants like you are the essential of our event.</p>
 
           <p>
             สำหรับบาร์แคมป์บางเขน ไม่ว่าคุณจะเป็นใคร เรียนที่ไหน หรือทำงานอะไร
