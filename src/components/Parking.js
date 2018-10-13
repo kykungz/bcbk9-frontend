@@ -2,15 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Content from './Content'
-import ParkingBtn from './ParkingBtn'
+import PrimaryBtn from './PrimaryBtn'
 
 const Col = styled.div`
   position: relative;
   float: left;
   width: 50%;
 `
+const Row = styled.div`
+  margin-bottom: 10px;
+`
 const Spacer = styled.div`
   clear: both;
+`
+
+const OptionName = styled.h3`
+  margin: 0;
+`
+const Option = styled.div`
+  margin-bottom: 10px;
 `
 const Tooltip = styled.div`
   background: rgba(0, 0, 0, 0.5);
@@ -30,13 +40,7 @@ const Tooltip = styled.div`
     border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
   }
 `
-Tooltip.defaultProps = {
-  top: 25,
-}
-
-const OptionName = styled.h3`
-  margin: 0;
-`
+Tooltip.defaultProps = { top: 25 }
 
 const options = {
   free: [
@@ -68,51 +72,46 @@ class Parking extends React.Component {
       view: '',
     }
   }
+  getOptions(type) {
+    return options[type] ? (
+      <Tooltip top={type == 'free' ? 25 : 60}>
+        {options[type].map(option => (
+          <Option key={option.name}>
+            <OptionName>{option.name}</OptionName>
+            Location: {option.location}
+            <br />
+            Capacity: {option.capacity}
+          </Option>
+        ))}
+      </Tooltip>
+    ) : null
+  }
   handleButton(type) {
     this.setState({ view: type })
   }
+  ParkingType(type) {
+    return (
+      <Row>
+        <PrimaryBtn
+          full
+          onClick={() => this.handleButton(type)}
+          onMouseOver={() => this.handleButton(type)}
+          onMouseOut={() => this.handleButton('')}
+        >
+          {type}
+        </PrimaryBtn>
+      </Row>
+    )
+  }
   render() {
-    let Options = ''
-    if (this.state.view) {
-      Options = (
-        <Tooltip top={this.state.view == 'free' ? 25 : 75}>
-          {options[this.state.view].map(option => (
-            <div key={option.name}>
-              <OptionName>{option.name}</OptionName>
-              Location: {option.location}
-              <br />
-              Capacity: {option.capacity}
-            </div>
-          ))}
-        </Tooltip>
-      )
-    }
     return (
       <div>
-        <Content title="Parking" style={{ minHeight: '200px' }}>
-          <Col style={{ width: '25%' }}>
-            <div>
-              <ParkingBtn
-                size="small"
-                onClick={() => this.handleButton('free')}
-                onMouseOver={() => this.handleButton('free')}
-                onMouseOut={() => this.handleButton('')}
-              >
-                Free
-              </ParkingBtn>
-            </div>
-            <div>
-              <ParkingBtn
-                size="small"
-                onClick={() => this.handleButton('paid')}
-                onMouseOver={() => this.handleButton('paid')}
-                onMouseOut={() => this.handleButton('')}
-              >
-                Paid
-              </ParkingBtn>
-            </div>
+        <Content title="Parking">
+          <Col>
+            {this.ParkingType('free')}
+            {this.ParkingType('paid')}
           </Col>
-          <Col>{Options}</Col>
+          <Col>{this.getOptions(this.state.view)}</Col>
           <Spacer />
         </Content>
       </div>
