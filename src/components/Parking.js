@@ -49,7 +49,6 @@ const Tooltip = styled.div`
   background: rgba(0, 0, 0, 0.5);
   max-width: 250px;
   color: white;
-  font-family: 'Century Gothic', 'Prompt';
   font-size: 16px;
   border-radius: 10px;
   padding: 20px 15px;
