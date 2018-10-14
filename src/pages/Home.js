@@ -1,11 +1,22 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Content from '../components/Content'
+
+const Container = styled.div`
+  width: 75%;
+  margin: 0 auto;
+  max-width: 960px;
+  @media (max-width: 650px) {
+    width: 90%;
+    max-width: initial;
+  }
+`
 
 class Home extends React.Component {
   render() {
     return (
-      <div>
+      <Container>
         <Content title="What is BarCamp?">
           <p>
             BarCamp is an unconference event that assembles people who want to
@@ -22,10 +33,7 @@ class Home extends React.Component {
           </p>
         </Content>
         <Content title="Participants">
-          <p>
-            Everyone is invited! No matter who you are, we believe all of you
-            are the essence of our event.
-          </p>
+          <p>Everyone! Partipants like you are the essential of our event.</p>
 
           <p>
             สำหรับบาร์แคมป์บางเขน ไม่ว่าคุณจะเป็นใคร เรียนที่ไหน หรือทำงานอะไร
@@ -52,7 +60,7 @@ class Home extends React.Component {
             และนี่คือเหตุผลที่คุณควรมาบาร์แคมป์
           </p>
         </Content>
-      </div>
+      </Container>
     )
   }
 }
