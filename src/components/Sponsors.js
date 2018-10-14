@@ -1,13 +1,12 @@
 import React from 'react'
-//import Fade from 'react-reveal/Fade'
+import Fade from 'react-reveal/Fade'
 import styled from 'styled-components'
+import Sponsor from '../assets/sponsor.jpeg'
 
 const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center
-  flex-direction: column;
 `
 const PairContainer = styled.div`
   width: 69%;
@@ -16,7 +15,11 @@ const PairContainer = styled.div`
   padding: calc(69% / 20) 0px;
 `
 const SponsorImage = styled.div`
-  background-color: red;
+  background: url(${prop => prop.url});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
   height: 20vw;
   width: 45%;
   border-radius: 20px;
@@ -24,15 +27,25 @@ const SponsorImage = styled.div`
     border-radius: 10px;
   }
 `
-export default () => (
-  <Container>
-    <PairContainer>
-      <SponsorImage />
-      <SponsorImage />
-    </PairContainer>
-    <PairContainer>
-      <SponsorImage />
-      <SponsorImage />
-    </PairContainer>
-  </Container>
+
+const SponsorImageUrl = [
+  [Sponsor, Sponsor],
+  [Sponsor, Sponsor],
+  [Sponsor, Sponsor],
+  [Sponsor, Sponsor],
+  [Sponsor, Sponsor],
+  [Sponsor, Sponsor],
+  [Sponsor, Sponsor],
+]
+
+const PairSponsor = (a, b) => (
+  <Fade bottom>
+    <Container>
+      <PairContainer>
+        <SponsorImage url={a} />
+        <SponsorImage url={b} />
+      </PairContainer>
+    </Container>
+  </Fade>
 )
+export default () => <>{SponsorImageUrl.map(e => PairSponsor(e[0], e[1]))}</>
