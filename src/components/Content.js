@@ -12,7 +12,6 @@ const Section = styled.div`
   }
 `
 const STitle = styled.h3`
-  font-family: 'Century Gothic', 'Prompt';
   font-size: 28px;
   text-transform: uppercase;
   margin: 0;
@@ -23,8 +22,6 @@ const STitle = styled.h3`
   }
 `
 const SContent = styled.div`
-  font-family: 'Century Gothic', 'Prompt';
-
   margin-left: 55px;
   padding-top: 15px;
   padding-bottom: 50px;
