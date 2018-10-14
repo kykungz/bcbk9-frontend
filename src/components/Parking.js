@@ -14,6 +14,7 @@ const ParkingTypes = styled.div`
     .hidden {
       display: none;
     }
+    margin-bottom: 10px;
   }
 `
 const Options = styled.div`
@@ -23,11 +24,11 @@ const Options = styled.div`
   margin-left: 7%;
   @media (max-width: 650px) {
     width: 80%;
-    display: inline-block;
     margin-left: 10px;
   }
 `
 const Row = styled.div`
+  padding: 10px;
   padding-bottom: 30px;
 
   @media (max-width: 650px) {
@@ -64,6 +65,7 @@ const Tooltip = styled.div`
   }
   @media (max-width: 650px) {
     padding: 10px 10px;
+    font-size: 14px;
     max-width: none;
     &::after {
       top: initial;
@@ -126,16 +128,18 @@ class Parking extends React.Component {
   }
   ParkingType(type) {
     return (
-      <Row onMouseOut={() => this.changeView('')}>
+      <Row
+        onMouseOut={() => this.changeView('')}
+        className={
+          type == 'paid' && this.state.view && this.state.view != type
+            ? 'hidden'
+            : ''
+        }
+      >
         <PrimaryBtn
           full
           onMouseOver={() => this.changeView(type)}
           onClick={() => this.changeView(type)}
-          className={
-            type == 'paid' && this.state.view && this.state.view != type
-              ? 'hidden'
-              : ''
-          }
         >
           {type}
         </PrimaryBtn>
