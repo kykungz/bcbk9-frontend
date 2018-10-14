@@ -20,6 +20,7 @@ const PairContainer = styled.div`
   padding: calc(69% / 20) 0px;
 `
 const SponsorImage = styled.div`
+  background: url(${prop => prop.url});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
