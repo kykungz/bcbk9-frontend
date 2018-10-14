@@ -7,7 +7,6 @@ const Button = styled.button`
   border: 0;
   border-radius: 15px;
   padding: 10px 15px;
-  margin: 10px;
   ${props => (props.full ? 'width: 100%;' : '')} color: white;
   text-align: center;
   text-transform: uppercase;
