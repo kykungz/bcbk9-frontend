@@ -8,6 +8,7 @@ const MenuContainer = styled.div`
   position: fixed;
   width: 100vw;
   display: flex;
+  z-index: 999;
   background: url(${prop => prop.src});
   background-size: cover;
   background-position: center;
