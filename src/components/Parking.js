@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Content from './Content'
 import PrimaryBtn from './PrimaryBtn'
 
+import options from '../data/parking'
+
 const ParkingTypes = styled.div`
   position: relative;
   float: left;
@@ -57,7 +59,7 @@ const Tooltip = styled.div`
     content: ' ';
     position: absolute;
     top: ${props => props.top};
-    right: 100%; /* To the left of the tooltip */
+    right: 100%;
     margin-top: -10px;
     border-width: 10px;
     border-style: solid;
@@ -78,29 +80,6 @@ const Tooltip = styled.div`
   }
 `
 Tooltip.defaultProps = { top: 25 }
-
-const options = {
-  free: [
-    {
-      name: 'Rapee Sagarik Building',
-      location: 'Behind Rapee Sagarik Building',
-      capacity: 40,
-    },
-  ],
-  paid: [
-    {
-      name: 'Ngam Wong Wan 1 Parking Building',
-      location: 'Ngam Wong Wan 1 entrance',
-      capacity: 289,
-    },
-
-    {
-      name: 'Ngam Wong Wan 2 Parking Building',
-      location: 'Ngam Wong Wan 2 entrance',
-      capacity: 192,
-    },
-  ],
-}
 
 class Parking extends React.Component {
   constructor(props) {
