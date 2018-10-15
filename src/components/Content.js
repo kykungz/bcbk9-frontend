@@ -10,6 +10,7 @@ const Section = styled.div`
 
   @media (max-width: 650px) {
     background-size: 26px;
+    padding-left: 45px;
   }
 `
 const STitle = styled.h3`
@@ -18,7 +19,6 @@ const STitle = styled.h3`
   margin: 0;
   @media (max-width: 650px) {
     font-size: 24px;
-    margin-left: 45px;
   }
 `
 const SContent = styled.div`
@@ -31,7 +31,6 @@ const SContent = styled.div`
   @media (max-width: 650px) {
     font-size: 14px;
 
-    margin-left: 45px;
     padding-top: 5px;
     p {
       text-indent: 0;
