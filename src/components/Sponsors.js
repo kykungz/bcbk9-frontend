@@ -18,6 +18,11 @@ const PairContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: calc(69% / 20) 0px;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    padding: 0px;
+  }
 `
 const SponsorImage = styled.div`
   background: url(${prop => prop.url});
@@ -26,10 +31,13 @@ const SponsorImage = styled.div`
   background-position: center;
   background-color: white;
   height: 20vw;
-  width: 45%;
-  border-radius: 20px 20px;
+  width: calc(69vw * 45 / 100);
+  border-radius: 2vw;
   @media (max-width: 650px) {
-    border-radius: 10px;
+    border-radius: 3vw;
+    width: 69vw;
+    height: 34vw;
+    margin: calc(69vw / 20) 0px;
   }
 `
 
@@ -44,16 +52,20 @@ const SponsorImageUrl = [
 ]
 
 const PairSponsor = (a, b) => (
-  <Fade bottom>
-    <Zoom>
-      <Container>
-        <PairContainer>
+  <Container>
+    <PairContainer>
+      <Fade bottom>
+        <Zoom>
           <SponsorImage url={a} />
+        </Zoom>
+      </Fade>
+      <Fade bottom>
+        <Zoom>
           <SponsorImage url={b} />
-        </PairContainer>
-      </Container>
-    </Zoom>
-  </Fade>
+        </Zoom>
+      </Fade>
+    </PairContainer>
+  </Container>
 )
 export default () => (
   <Background>{SponsorImageUrl.map(e => PairSponsor(e[0], e[1]))}</Background>
