@@ -6,12 +6,11 @@ import Content from '../components/Content'
 import content from '../data/content'
 
 const Container = styled.div`
-  width: 75%;
+  padding: 1em;
   margin: 0 auto;
   max-width: 960px;
   @media (max-width: 650px) {
-    width: 90%;
-    max-width: initial;
+    padding: 0;
   }
 `
 
