@@ -91,8 +91,8 @@ class Parking extends React.Component {
   getOptions(type) {
     return options[type] ? (
       <Tooltip top={type == 'free' ? '25%' : '130px'}>
-        {options[type].map(option => (
-          <Option key={option.name}>
+        {options[type].map((option, idx) => (
+          <Option key={idx}>
             <OptionName>{option.name}</OptionName>
             Location: {option.location}
             <br />
