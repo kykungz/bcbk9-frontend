@@ -19,17 +19,18 @@ const Container = styled.div`
     flex-direction: column;
   }
 `
+const getPropSize = prop => prop.size
 const SponsorImage = styled.img`
   background-color: white;
-  height: calc(69vw * 45 / 150 * ${prop => prop.size});
-  width: calc(69vw * 45 / 100 * ${prop => prop.size});
+  height: calc(69vw * 45 / 150 * ${getPropSize});
+  width: calc(69vw * 45 / 100 * ${getPropSize});
   border-radius: 2vw;
-  margin: calc(69vw / 20 * ${prop => prop.size});
+  margin: calc(69vw / 20 * ${getPropSize});
   @media (max-width: 650px) {
     border-radius: 3vw;
-    width: calc(69vw * ${prop => prop.size});
-    height: calc(69vw / 1.5 * ${prop => prop.size});
-    margin: calc(69vw / 20 * ${prop => prop.size}) 0px;
+    width: calc(69vw * ${getPropSize});
+    height: calc(69vw / 1.5 * ${getPropSize});
+    margin: calc(69vw / 20 * ${getPropSize}) 0px;
   }
 `
 
@@ -64,9 +65,8 @@ const PairSponsor = (a, i, sep) => (
 )
 export default () => (
   <Background>
-    {SponsorImageUrl.map((e, i, arr) => {
-      if (i === 0 || e.size !== arr[i - 1].size) return PairSponsor(e, i, true)
-      return PairSponsor(e, i, false)
-    })}
+    {SponsorImageUrl.map((e, i, arr) =>
+      PairSponsor(e, i, i === 0 || e.size !== arr[i - 1].size),
+    )}
   </Background>
 )
