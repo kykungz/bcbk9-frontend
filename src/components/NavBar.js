@@ -12,11 +12,11 @@ const MenuContainer = styled.div`
   background-size: cover;
   background-position: center;
   height: 130px;
-  transition: 0.6s;
   box-sizing: border-box;
   padding: 0px 100px;
   transition: width 0, all 0.6s;
   @media (max-width: 650px) {
+    transition: 0.6s;
     top: ${prop => (prop.isDown ? '60px' : '-300px')};
     padding: 0px;
     height: 300px;
