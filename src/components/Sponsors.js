@@ -35,34 +35,39 @@ const SponsorImage = styled.img`
 `
 
 const SponsorImageUrl = [
-  { urls: [Sponsor, Sponsor], size: 1 },
-  { urls: [Sponsor, Sponsor], size: 1 },
-  { urls: [Sponsor, Sponsor], size: 0.9 },
-  { urls: [Sponsor, Sponsor], size: 0.9 },
-  { urls: [Sponsor, Sponsor], size: 0.8 },
-  { urls: [Sponsor, Sponsor], size: 0.8 },
-  { urls: [Sponsor, Sponsor], size: 0.7 },
-  { urls: [Sponsor, Sponsor], size: 0.7 },
-  { urls: [Sponsor, Sponsor], size: 0.6 },
-  { urls: [Sponsor, Sponsor], size: 0.6 },
-  { urls: [Sponsor, Sponsor], size: 0.5 },
-  { urls: [Sponsor, Sponsor], size: 0.5 },
+  { PicUrls: [Sponsor, Sponsor], size: 1, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 1, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.9, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.9, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.8, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.8, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.7, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.7, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.6, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.6, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.5, urls: ['/', '/'] },
+  { PicUrls: [Sponsor, Sponsor], size: 0.5, urls: ['/', '/'] },
 ]
 
 const PairSponsor = (a, i, sep) => (
   <Container size={a.size} isSep={sep} key={i}>
     <Fade bottom>
       <Zoom>
-        <SponsorImage src={a.urls[0]} size={a.size} />
+        <a href={a.urls[0]}>
+          <SponsorImage src={a.PicUrls[0]} size={a.size} />
+        </a>
       </Zoom>
     </Fade>
     <Fade bottom>
       <Zoom>
-        <SponsorImage src={a.urls[1]} size={a.size} />
+        <a href={a.urls[1]}>
+          <SponsorImage src={a.PicUrls[1]} size={a.size} />
+        </a>
       </Zoom>
     </Fade>
   </Container>
 )
+
 export default () => (
   <Background>
     {SponsorImageUrl.map((e, i, arr) =>
