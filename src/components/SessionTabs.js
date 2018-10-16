@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 const Container = styled.div`
   width: 43vw;
+  @media (max-width: 650px) {
+    width: 90vw;
+  }
 `
 const Tab = styled.div`
   display: flex;
@@ -9,11 +12,16 @@ const Tab = styled.div`
   border-radius: 2vw;
   width: 100%;
   height: calc(43vw / 5.4);
+  @media (max-width: 650px) {
+    height: calc(90vw / 5.4);
+  }
 `
 const TextContainer = styled.div`
   flex: 4.4;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-bottom: 3%;
 `
 const NumContainer = styled.div`
   flex: 1;
@@ -31,10 +39,13 @@ const Circle = styled.div`
   align-items: center;
 `
 const SessionName = styled.span`
-  flex: 1;
+  color: white;
+  margin-left: calc(100% / 34);
+  font-size: 20px;
 `
 const SpeakerName = styled.span`
-  flex: 1;
+  color: white;
+  margin-left: calc(100% / 34);
 `
 const Number = styled.span`
   flex: 1;
@@ -45,8 +56,8 @@ const Number = styled.span`
 const getTab = () => (
   <Tab>
     <TextContainer>
-      <SessionName />
-      <SpeakerName />
+      <SessionName>ICEICE</SessionName>
+      <SpeakerName>by ice</SpeakerName>
     </TextContainer>
     <NumContainer>
       <Circle>
