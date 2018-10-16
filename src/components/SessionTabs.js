@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   width: 43vw;
   @media (max-width: 650px) {
-    width: 90vw;
+    width: 82vw;
   }
 `
 const Tab = styled.div`
@@ -37,20 +37,20 @@ const Circle = styled.div`
   margin: calc(43vw / 1080 * 15) 0px;
   height: calc(43vw / 540 * 85);
   @media (max-width: 650px) {
-    margin: calc(90vw / 1080 * 15) 0px;
-    width: calc(90vw / 540 * 85);
-    height: calc(90vw / 540 * 85);
+    margin: calc(82vw / 1080 * 15) 0px;
+    width: calc(82vw / 540 * 85);
+    height: calc(82vw / 540 * 85);
   }
 `
 const SessionName = styled.span`
   word-wrap: break-word;
   color: white;
   margin-left: calc(100% / 34);
-  font-size: 2vw;
+  font-size: 1.8vw;
   width: 30vw;
   @media (max-width: 650px) {
-    font-size: 4vw;
-    width: 65vw;
+    font-size: 3.6vw;
+    width: 62vw;
   }
 `
 const SpeakerName = styled.span`
@@ -58,9 +58,9 @@ const SpeakerName = styled.span`
   color: white;
   margin-left: calc(100% / 34);
   width: 30vw;
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   @media (max-width: 650px) {
-    font-size: 3.6vw;
+    font-size: 3.2vw;
   }
 `
 const Number = styled.span`
@@ -93,11 +93,15 @@ const sessionList = [
     speaker: 'ice',
     number: '00000',
   },
-  { name: 'ICE', speaker: 'ice', number: '00000' },
-  { name: 'ICE', speaker: 'ice', number: '00000' },
-  { name: 'ICE', speaker: 'ice', number: '00000' },
-  { name: 'ICE', speaker: 'ice', number: '00000' },
-  { name: 'ICE', speaker: 'ice', number: '00000' },
+  { name: 'ICEpppppppppppppppppppppp', speaker: 'ice', number: '00000' },
+  {
+    name: 'ICEppppppppppppppppppppppppppppppppppppppppppppp',
+    speaker: 'ice',
+    number: '00000',
+  },
+  { name: 'IpppppppppppCE', speaker: 'ice', number: '00000' },
+  { name: 'IpppppppppppppppppCE', speaker: 'ice', number: '00000' },
+  { name: 'IlllllllllllllllCE', speaker: 'ice', number: '00000' },
   { name: 'ICE', speaker: 'ice', number: '00000' },
 ]
 
