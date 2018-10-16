@@ -11,10 +11,7 @@ const Tab = styled.div`
   background-image: linear-gradient(to right, #f38b7b, #983a7a);
   border-radius: 2vw;
   width: 100%;
-  height: calc(43vw / 5.4);
-  @media (max-width: 650px) {
-    height: calc(90vw / 5.4);
-  }
+  margin-bottom: 10px;
 `
 const TextContainer = styled.div`
   flex: 4.4;
@@ -22,6 +19,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-bottom: 3%;
+  padding-top: 3%;
 `
 const NumContainer = styled.div`
   flex: 1;
@@ -31,40 +29,80 @@ const NumContainer = styled.div`
 `
 const Circle = styled.div`
   background-color: white;
-  height: 85%;
-  width: 85%;
+  width: calc(43vw / 540 * 85);
   border-radius: 50%;
   display: flex;
   justufy-content: center;
   align-items: center;
+  margin: calc(43vw / 1080 * 15) 0px;
+  height: calc(43vw / 540 * 85);
+  @media (max-width: 650px) {
+    margin: calc(90vw / 1080 * 15) 0px;
+    width: calc(90vw / 540 * 85);
+    height: calc(90vw / 540 * 85);
+  }
 `
 const SessionName = styled.span`
+  word-wrap: break-word;
   color: white;
   margin-left: calc(100% / 34);
-  font-size: 20px;
+  font-size: 2vw;
+  width: 30vw;
+  @media (max-width: 650px) {
+    font-size: 4vw;
+    width: 65vw;
+  }
 `
 const SpeakerName = styled.span`
+  word-wrap: break-word;
   color: white;
   margin-left: calc(100% / 34);
+  width: 30vw;
+  font-size: 1.8vw;
+  @media (max-width: 650px) {
+    font-size: 3.6vw;
+  }
 `
 const Number = styled.span`
   flex: 1;
   text-align: center;
   color: #ee4e4f;
   font-size: 2vw;
+  @media (max-width: 650px) {
+    font-size: 4vw;
+  }
 `
-const getTab = () => (
+const getTab = (name, speaker, number) => (
   <Tab>
     <TextContainer>
-      <SessionName>ICEICE</SessionName>
-      <SpeakerName>by ice</SpeakerName>
+      <SessionName>{name}</SessionName>
+      <SpeakerName>by {speaker}</SpeakerName>
     </TextContainer>
     <NumContainer>
       <Circle>
-        <Number>17201</Number>
+        <Number>{number}</Number>
       </Circle>
     </NumContainer>
   </Tab>
 )
 
-export default () => <Container>{getTab()}</Container>
+const sessionList = [
+  {
+    name:
+      'ICEoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+    speaker: 'ice',
+    number: '00000',
+  },
+  { name: 'ICE', speaker: 'ice', number: '00000' },
+  { name: 'ICE', speaker: 'ice', number: '00000' },
+  { name: 'ICE', speaker: 'ice', number: '00000' },
+  { name: 'ICE', speaker: 'ice', number: '00000' },
+  { name: 'ICE', speaker: 'ice', number: '00000' },
+  { name: 'ICE', speaker: 'ice', number: '00000' },
+]
+
+export default () => (
+  <Container>
+    {sessionList.map(e => getTab(e.name, e.speaker, e.number))}
+  </Container>
+)
