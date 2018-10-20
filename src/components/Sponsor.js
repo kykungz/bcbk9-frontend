@@ -8,7 +8,7 @@ import sellsuki from '../assets/silver/sellsuki.png'
 import wisesight from '../assets/silver/wisesight.svg'
 
 // const url =
-//   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
+// 'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
 
 const sponsors = {
   // platinum: [url, url, url, url],
@@ -24,7 +24,7 @@ const All = styled.div`
 `
 
 const Container = styled.div`
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   margin-top: 2em;
 `
