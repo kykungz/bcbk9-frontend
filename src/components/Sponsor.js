@@ -5,8 +5,8 @@ import Fade from 'react-reveal/Fade'
 // import url from '../assets/sponsor.jpeg'
 
 const All = styled.div`
-  width: 100vw;
-  background-color: white;
+  ${'' /* width: 100vw; */} ${'' /* background-color: white; */}
+  margin: 0 1em;
 `
 const url =
   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
