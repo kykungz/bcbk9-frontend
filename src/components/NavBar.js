@@ -1,21 +1,16 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Background from '../assets/navbar.png'
 import Hamburger from '../assets/hamburger.svg'
 import FacebookIcon from '../assets/facebookIcon.png'
 import TwitterIcon from '../assets/twitterIcon.svg'
+const Container = styled.div``
 const MenuContainer = styled.div`
-  position: fixed;
   width: 100vw;
   display: flex;
-  z-index: 999;
-  background: url(${prop => prop.src});
-  background-size: cover;
-  background-position: center;
-  height: 130px;
   box-sizing: border-box;
   padding: 0px 100px;
   transition: width 0, all 0.6s;
+  background-color: red;
   @media (max-width: 650px) {
     transition: 0.6s;
     top: ${prop => (prop.isDown ? '60px' : '-300px')};
@@ -29,7 +24,7 @@ const MenuContainer = styled.div`
 const Menu = styled.div`
   flex: 1;
   text-align: center;
-  padding: 30px 0px 40px 0px;
+  padding: 20px 0px 20px 0px;
   transition: 0.6s;
   display: flex;
   justify-content: center;
@@ -81,6 +76,30 @@ const Button = styled.a`
   border: none;
 `
 
+const LineContainer = styled.div`
+  left: 0px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -5px;
+  @media (max-width: 650px) {
+    display: none;
+  }
+`
+const Dot = styled.div`
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #d1446a;
+  margin: 0px 10px;
+`
+const Line = styled.div`
+  height: 4px;
+  background-color: black;
+  width: 40%;
+`
 const menuGroup = [
   { name: 'TIMETABLE', url: '/' },
   { name: 'LOCATION', url: '/' },
@@ -103,7 +122,7 @@ export default class extends Component {
     this.setState({ isDown: !this.state.isDown })
   }
   render = () => (
-    <>
+    <Container>
       <TopDropDown>
         <Button
           onClick={this.onClickBurger}
@@ -114,9 +133,14 @@ export default class extends Component {
         <Button url={TwitterIcon} href="/" float="right" size="50% 50%" />
         <Button url={FacebookIcon} href="/" float="right" size="50% 50%" />
       </TopDropDown>
-      <MenuContainer src={Background} isDown={this.state.isDown}>
+      <MenuContainer isDown={this.state.isDown}>
         {menuGroup.map(e => menu(e.name, e.url))}
       </MenuContainer>
-    </>
+      <LineContainer>
+        <Line />
+        <Dot />
+        <Line />
+      </LineContainer>
+    </Container>
   )
 }
