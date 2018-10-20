@@ -1,10 +1,11 @@
 import React from 'react'
-import Sponsors from '../components/Sponsors'
 import NavBar from '../components/NavBar'
 import Location from '../components/Location'
 import Content from '../components/Content'
+import Logo from '../components/Logo'
 import styled from 'styled-components'
 import content from '../data/content'
+import Sponsors from '../components/Sponsor'
 
 const Container = styled.div`
   padding: 1em;
@@ -20,6 +21,7 @@ class Home extends React.Component {
     return (
       <div>
         <NavBar />
+        <Logo />
         <Container>
           {content.map((c, cidx) => (
             <Content title={c.title} key={cidx}>
