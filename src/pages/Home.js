@@ -7,8 +7,6 @@ import Parking from '../components/Parking'
 import styled from 'styled-components'
 import content from '../data/content'
 import Timetable from '../components/Timetable'
-import event from '../data/event'
-import timing from '../data/timing'
 import Sponsors from '../components/Sponsor'
 import { Element } from 'react-scroll'
 
@@ -36,7 +34,7 @@ class Home extends React.Component {
               ))}
             </Content>
           ))}
-          <Timetable event={event} time={timing} />
+          <Timetable />
           <Element name="location">
             <Location />
           </Element>
