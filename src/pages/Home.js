@@ -3,6 +3,7 @@ import Sponsors from '../components/Sponsors'
 import NavBar from '../components/NavBar'
 import Location from '../components/Location'
 import Content from '../components/Content'
+import Logo from '../components/Logo'
 import styled from 'styled-components'
 import content from '../data/content'
 
@@ -20,6 +21,7 @@ class Home extends React.Component {
     return (
       <div>
         <NavBar />
+        <Logo />
         <Container>
           <Location />
           {content.map((c, cidx) => (
