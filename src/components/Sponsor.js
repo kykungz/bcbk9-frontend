@@ -75,7 +75,9 @@ const SponsorContainer = styled.div`
   display: grid;
   grid-gap: 1em;
   grid-template-columns: 1fr 1fr;
-  margin: 1em auto;
+  margin: auto;
+  margin-top: 1em;
+  padding-bottom: 2em;
 
   ${props =>
     props.size === 'platinum' &&
@@ -123,7 +125,7 @@ export default () => (
         topDot
         length="65"
         color="white"
-        style={{ transform: 'rotate(180deg)' }}
+        style={{ transform: 'rotate(180deg)', marginTop: '7px' }}
       />
       <Title>SPONSOR</Title>
       {Object.keys(sponsors).map(size => (
