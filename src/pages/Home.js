@@ -29,8 +29,8 @@ class Home extends React.Component {
               ))}
             </Content>
           ))}
-          <Sponsors />
         </Container>
+        <Sponsors />
       </div>
     )
   }
