@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Fade, Zoom } from 'react-reveal'
 
 const Section = styled.div`
-  margin-bottom: 0px;
+  margin: 0 1em;
+
   .circle {
     height: 25px;
     width: 25px;
@@ -10,14 +12,8 @@ const Section = styled.div`
     border-radius: 50%;
     display: inline-block;
   }
-
-  @media (max-width: 650px) {
-    .circle {
-      height: 20px;
-      width: 20px;
-    }
-  }
 `
+
 const STitle = styled.h3`
   display: inline-block;
 
@@ -28,33 +24,43 @@ const STitle = styled.h3`
   margin-top: -10px;
   margin-left: 30px;
   @media (max-width: 650px) {
-    font-size: 24px;
+    margin-left: 20px;
+    font-size: 22px;
   }
 `
+
 const SContent = styled.div`
   padding: 15px 0 50px 40px;
+  padding-bottom: 10px;
 
   margin-top: -8px;
   margin-left: 10px;
+  margin-bottom: 1em;
+
   border-left: 5px dashed #a31f59;
   p {
-    text-indent: 2em;
+    font-size: 20px;
   }
-  @media (max-width: 650px) {
-    font-size: 14px;
 
-    padding-top: 5px;
-    margin-left: 8px;
+  @media (max-width: 650px) {
+    padding-left: 30px;
     p {
-      text-indent: 0;
+      font-size: 18px;
+      margin-top: 8px;
     }
   }
 `
 const Content = props => (
   <Section>
-    <div className="circle" />
-    <STitle>{props.title}</STitle>
-    <SContent>{props.children}</SContent>
+    <Zoom>
+      <div className="circle" />
+    </Zoom>
+    <STitle>
+      <Fade>{props.title}</Fade>
+    </STitle>
+    <Fade bottom>
+      <SContent>{props.children}</SContent>
+    </Fade>
   </Section>
 )
 

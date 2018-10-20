@@ -1,18 +1,21 @@
 import React from 'react'
-import Sponsors from '../components/Sponsors'
 import NavBar from '../components/NavBar'
 import Location from '../components/Location'
 import Content from '../components/Content'
+import Logo from '../components/Logo'
+import Parking from '../components/Parking'
 import styled from 'styled-components'
 import content from '../data/content'
-import Date from '../components/Date'
 import Timetable from '../components/Timetable'
 import event from '../data/event'
 import timing from '../data/timing'
+import Sponsors from '../components/Sponsor'
+import { Element } from 'react-scroll'
 
 const Container = styled.div`
   padding: 1em;
   margin: 0 auto;
+  margin-top: 3em;
   max-width: 960px;
   @media (max-width: 650px) {
     padding: 0;
@@ -24,9 +27,8 @@ class Home extends React.Component {
     return (
       <div>
         <NavBar />
+        <Logo />
         <Container>
-          <Location />
-          <Date />
           {content.map((c, cidx) => (
             <Content title={c.title} key={cidx}>
               {c.text.map((t, tidx) => (
@@ -34,9 +36,15 @@ class Home extends React.Component {
               ))}
             </Content>
           ))}
-          <Sponsors />
-        <Timetable event={event} time={timing}  />
+          <Timetable event={event} time={timing} />
+          <Element name="location">
+            <Location />
+          </Element>
+          <Parking />
         </Container>
+        <Element name="sponsor">
+          <Sponsors />
+        </Element>
       </div>
     )
   }

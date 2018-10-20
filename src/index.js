@@ -1,8 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.scss'
+import 'loaders.css/src/animations/ball-pulse.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
+import { injectGlobal } from 'styled-components'
+import background from './assets/background.png'
+
+injectGlobal`
+  body {
+    background-image: url("${background}");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  * {
+    font-family: 'Prompt', sans-serif;
+  }
+`
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
