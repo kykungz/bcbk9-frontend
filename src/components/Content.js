@@ -24,6 +24,7 @@ const STitle = styled.h3`
   margin-left: 30px;
   @media (max-width: 650px) {
     margin-left: 20px;
+    font-size: 22px;
   }
 `
 
