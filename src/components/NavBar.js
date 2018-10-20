@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Hamburger from '../assets/hamburger.svg'
 import FacebookIcon from '../assets/facebookIcon.png'
 import TwitterIcon from '../assets/twitterIcon.svg'
+import { Link } from 'react-scroll'
+
 const Container = styled.div`
   position: fixed;
   z-index: 1000;
@@ -25,10 +27,10 @@ const MenuContainer = styled.div`
     background-image: linear-gradient(#ef867a, #c93267);
   }
 `
-const Menu = styled.div`
+const Menu = styled(Link)`
   flex: 1;
   text-align: center;
-  padding: 20px 0px 20px 0px;
+  padding: 20px 20px;
   transition: 0.6s;
   display: flex;
   justify-content: center;
@@ -109,17 +111,17 @@ const Line = styled.div`
   width: 40%;
 `
 const menuGroup = [
-  { name: 'TIMETABLE', url: '/' },
-  { name: 'LOCATION', url: '/' },
-  { name: 'SPONSOR', url: '/' },
-  { name: 'FAQ', url: '/' },
-  { name: 'SESSIONS', url: '/' },
+  { name: 'timetable', url: '/' },
+  { name: 'location', url: '/' },
+  { name: 'sponsor', url: '/' },
+  { name: 'faq', url: '/' },
+  { name: 'sessions', url: '/' },
 ]
 
 const menu = (name, url) => (
-  <Menu>
+  <Menu to={name} key={name} spy={true} smooth={true} duration={1000}>
     <MenuName>
-      <A href={url}>{name}</A>
+      <A href={url}>{name.toUpperCase()}</A>
     </MenuName>
   </Menu>
 )

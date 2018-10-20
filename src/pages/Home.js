@@ -7,6 +7,7 @@ import Parking from '../components/Parking'
 import styled from 'styled-components'
 import content from '../data/content'
 import Sponsors from '../components/Sponsor'
+import { Element } from 'react-scroll'
 
 const Container = styled.div`
   padding: 1em;
@@ -32,10 +33,14 @@ class Home extends React.Component {
               ))}
             </Content>
           ))}
-          <Location />
+          <Element name="location">
+            <Location />
+          </Element>
           <Parking />
         </Container>
-        <Sponsors />
+        <Element name="sponsor">
+          <Sponsors />
+        </Element>
       </div>
     )
   }
