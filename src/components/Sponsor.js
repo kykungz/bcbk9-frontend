@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import Zoom from 'react-reveal/Zoom'
-import Fade from 'react-reveal/Fade'
+import { Zoom, Fade } from 'react-reveal'
+import Line from './Line'
 import byteark from '../assets/silver/byteark.svg'
 import lnw from '../assets/silver/lnw.png'
 import sellsuki from '../assets/silver/sellsuki.png'
@@ -46,16 +46,25 @@ const sponsors = {
 }
 
 const All = styled.div`
-  padding: 1em;
-  padding-top: 2em;
   background: salmon;
 `
 
 const Container = styled.div`
-  max-width: 800px;
-  margin: auto;
-  margin-top: 2em;
+  padding: 1em;
+  padding-top: 0;
+  margin: 0 auto;
+  margin-top: 3em;
+  max-width: 960px;
+  @media (max-width: 650px) {
+    padding: 0;
+  }
 `
+
+// const Container = styled.div`
+//   max-width: 800px;
+//   margin: auto;
+//   margin-top: 2em;
+// `
 
 const Sponsor = styled.a`
   img {
@@ -99,9 +108,26 @@ const SponsorContainer = styled.div`
     `}
 `
 
+const Title = styled.h1`
+  font-size: 28px;
+  margin: 0 2.5em;
+  padding: 30px 0;
+  color: white;
+`
+
 export default () => (
   <All>
     <Container>
+      <Line
+        dashed
+        right="15px"
+        top="10px"
+        topDot
+        bottomDot
+        length="600"
+        color="white"
+      />
+      <Title>SPONSOR</Title>
       {Object.keys(sponsors).map(size => (
         <SponsorContainer size={size} key={size}>
           {sponsors[size].map((sponsor, index) => (
