@@ -10,7 +10,7 @@ const MenuContainer = styled.div`
   box-sizing: border-box;
   padding: 0px 100px;
   transition: width 0, all 0.6s;
-  background-color: red;
+  background-color: white;
   @media (max-width: 650px) {
     transition: 0.6s;
     top: ${prop => (prop.isDown ? '60px' : '-300px')};
@@ -97,7 +97,10 @@ const Dot = styled.div`
 `
 const Line = styled.div`
   height: 4px;
-  background-color: black;
+  background-image: linear-gradient(
+    to right,
+    ${props => props.from + ', ' + props.to}
+  );
   width: 40%;
 `
 const menuGroup = [
@@ -137,9 +140,9 @@ export default class extends Component {
         {menuGroup.map(e => menu(e.name, e.url))}
       </MenuContainer>
       <LineContainer>
-        <Line />
+        <Line from="#F9967A" to="#D32D64" />
         <Dot />
-        <Line />
+        <Line from="#CE275F" to="#A90F45" />
       </LineContainer>
     </Container>
   )
