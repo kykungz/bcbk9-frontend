@@ -48,6 +48,7 @@ const LogoContainer = styled.div`
   flex-direction: column;
   padding: 0 3em;
   min-height: 370px;
+  width: 100vw;
 
   img {
     width: 100%;
