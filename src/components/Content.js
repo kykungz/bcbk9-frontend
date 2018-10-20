@@ -50,7 +50,7 @@ const SContent = styled.div`
   }
 `
 const Content = props => (
-  <Section>
+  <Section className={props.className}>
     <Zoom>
       <div className="circle" />
     </Zoom>

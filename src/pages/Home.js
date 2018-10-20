@@ -14,6 +14,8 @@ import { Element } from 'react-scroll'
 const Container = styled.div`
   padding: 1em;
   margin: 0 auto;
+  margin-bottom: 0;
+  padding-bottom: 0;
   margin-top: 3em;
   max-width: 960px;
   @media (max-width: 650px) {

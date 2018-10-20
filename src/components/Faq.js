@@ -13,6 +13,16 @@ const Grid = styled.div`
   }
 `
 
+const StyledContent = styled(Content)`
+  div {
+    margin-bottom: 0;
+  }
+
+  ${Grid}:last-child {
+    margin-bottom: 3em;
+  }
+`
+
 const Question = styled.h3`
   margin-bottom: 0.5em;
   font-weight: bold;
@@ -23,7 +33,7 @@ const Answer = styled.div``
 export default class extends React.PureComponent {
   render() {
     return (
-      <Content title="FAQs">
+      <StyledContent title="FAQs">
         <Grid>
           {faqs.map(item => (
             <div key={item.question}>
@@ -32,7 +42,7 @@ export default class extends React.PureComponent {
             </div>
           ))}
         </Grid>
-      </Content>
+      </StyledContent>
     )
   }
 }
