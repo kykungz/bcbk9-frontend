@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Fade, Zoom } from 'react-reveal'
 
 const Section = styled.div`
   margin: 0 1em;
@@ -50,9 +51,15 @@ const SContent = styled.div`
 `
 const Content = props => (
   <Section>
-    <div className="circle" />
-    <STitle>{props.title}</STitle>
-    <SContent>{props.children}</SContent>
+    <Zoom>
+      <div className="circle" />
+    </Zoom>
+    <STitle>
+      <Fade>{props.title}</Fade>
+    </STitle>
+    <Fade bottom>
+      <SContent>{props.children}</SContent>
+    </Fade>
   </Section>
 )
 
