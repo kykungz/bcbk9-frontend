@@ -19,7 +19,8 @@ const LogoComponent = styled.img`
   width: 300px;
 `
 const DueDate = styled.h2`
-  margin: auto;
+  margin: 1em auto;
+  font-size: 30px;
   font-weight: 400;
   color: #a31d58;
 `
@@ -29,16 +30,16 @@ export default () => (
     <DetailContainer>
       <LogoComponent src={Logo} style={{ marginTop: '40px' }} />
       <LogoComponent src={Barcamp} />
+      <DueDate>27 November 2018</DueDate>
       <Button
         style={{
-          margin: '40px auto',
+          margin: 'auto',
           width: '270px',
           height: '70px',
         }}
       >
         register now
       </Button>
-      <DueDate>27 November 2018</DueDate>
     </DetailContainer>
   </Container>
 )
