@@ -5,6 +5,7 @@ import Location from '../components/Location'
 import Content from '../components/Content'
 import styled from 'styled-components'
 import content from '../data/content'
+import Date from '../components/Date'
 
 const Container = styled.div`
   padding: 1em;
@@ -29,6 +30,7 @@ class Home extends React.Component {
               ))}
             </Content>
           ))}
+          <Date />
           <Sponsors />
         </Container>
       </div>
