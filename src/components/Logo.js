@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/logo.svg'
-import Barcamp from '../assets/barcamp.png'
+// import Barcamp from '../assets/barcamp.png'
+import Barcamp from '../assets/logo-barcamp.svg'
 import PrimaryBtn from './PrimaryBtn'
 import Loader from 'react-loaders'
 
@@ -49,6 +50,7 @@ const LogoContainer = styled.div`
   padding: 0 3em;
   min-height: 370px;
   width: 100vw;
+  box-sizing: border-box;
 
   img {
     width: 100%;
