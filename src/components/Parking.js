@@ -72,7 +72,7 @@ class Parking extends React.Component {
   }
   render() {
     return (
-      <Content title="Parking">
+      <Content title="PARKING">
         {this.getOptions('free', 0)}
         {this.getOptions('paid', 0)}
         {this.getOptions('paid', 1)}
