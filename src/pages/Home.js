@@ -4,6 +4,7 @@ import Location from '../components/Location'
 import Content from '../components/Content'
 import Logo from '../components/Logo'
 import Parking from '../components/Parking'
+import Faq from '../components/Faq'
 import styled from 'styled-components'
 import content from '../data/content'
 import Sponsors from '../components/Sponsor'
@@ -34,6 +35,7 @@ class Home extends React.Component {
           ))}
           <Location />
           <Parking />
+          <Faq />
         </Container>
         <Sponsors />
       </div>

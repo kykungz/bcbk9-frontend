@@ -115,7 +115,11 @@ export default class extends React.PureComponent {
             </LogoContainer>
           )}
           <DueDate>27 November 2018</DueDate>
-          <a href="https://apple.com">
+          <a
+            href="https://goo.gl/Shs6VY"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <RegisterButton>register now</RegisterButton>
           </a>
         </DetailContainer>

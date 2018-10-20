@@ -18,7 +18,6 @@ const STitle = styled.h3`
   display: inline-block;
 
   font-size: 28px;
-  text-transform: uppercase;
 
   margin: 0;
   margin-top: -10px;
