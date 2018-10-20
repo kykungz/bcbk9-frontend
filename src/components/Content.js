@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Section = styled.div`
-  margin-bottom: 0px;
+  margin: 0 1em;
+
   .circle {
     height: 25px;
     width: 25px;
@@ -18,6 +19,7 @@ const Section = styled.div`
     }
   }
 `
+
 const STitle = styled.h3`
   display: inline-block;
 
@@ -31,6 +33,7 @@ const STitle = styled.h3`
     font-size: 24px;
   }
 `
+
 const SContent = styled.div`
   padding: 15px 0 50px 40px;
 

@@ -5,6 +5,8 @@ import Barcamp from '../assets/barcamp.svg'
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  padding: 0 1em;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
