@@ -18,9 +18,6 @@ injectGlobal`
   * {
     font-family: 'Prompt', sans-serif;
   }
-  p {
-    color: 2e2e2e !important;
-  }
 `
 
 ReactDOM.render(<App />, document.getElementById('root'))

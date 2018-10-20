@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/logo.svg'
-import Barcamp from '../assets/barcamp.svg'
+import Barcamp from '../assets/barcamp.png'
 import PrimaryBtn from './PrimaryBtn'
 import Loader from 'react-loaders'
 
@@ -112,7 +112,7 @@ export default class extends React.PureComponent {
           ) : (
             <LogoContainer>
               <LogoComponent src={Logo} />
-              <LogoComponent src={Barcamp} />
+              <LogoComponent style={{ marginTop: '0.5em' }} src={Barcamp} />
             </LogoContainer>
           )}
           <DueDate>27 November 2018</DueDate>
