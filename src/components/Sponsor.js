@@ -12,9 +12,9 @@ const url =
   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
 
 const sponsors = {
-  platinum: [url, url, url, url],
-  gold: [url, url],
-  silver: [url, url],
+  platinum: [[url, url], [url, url]],
+  gold: [[url, url]],
+  silver: [[url, url]],
 }
 
 const Sponsor = styled.div`
@@ -60,14 +60,14 @@ export default () => (
           <Sponsor>
             <Fade>
               <Zoom>
-                <img src={sponsor} />
+                <img src={sponsor[0]} />
               </Zoom>
             </Fade>
           </Sponsor>
           <Sponsor>
             <Zoom>
               <Fade>
-                <img src={sponsor} />
+                <img src={sponsor[1]} />
               </Fade>
             </Zoom>
           </Sponsor>
@@ -78,14 +78,14 @@ export default () => (
           <Sponsor>
             <Zoom>
               <Fade>
-                <img src={sponsor} />
+                <img src={sponsor[0]} />
               </Fade>
             </Zoom>
           </Sponsor>
           <Sponsor>
             <Zoom>
               <Fade>
-                <img src={sponsor} />
+                <img src={sponsor[1]} />
               </Fade>
             </Zoom>
           </Sponsor>
@@ -96,14 +96,14 @@ export default () => (
           <Sponsor>
             <Zoom>
               <Fade>
-                <img src={sponsor} />
+                <img src={sponsor[0]} />
               </Fade>
             </Zoom>
           </Sponsor>
           <Sponsor>
             <Zoom>
               <Fade>
-                <img src={sponsor} />
+                <img src={sponsor[1]} />
               </Fade>
             </Zoom>
           </Sponsor>
