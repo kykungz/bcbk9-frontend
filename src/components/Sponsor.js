@@ -5,7 +5,6 @@ import Fade from 'react-reveal/Fade'
 // import url from '../assets/sponsor.jpeg'
 
 const All = styled.div`
-  ${'' /* width: 100vw; */} ${'' /* background-color: white; */}
   margin: 0 1em;
 `
 const url =

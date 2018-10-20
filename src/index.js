@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.scss'
+import 'loaders.css/src/animations/ball-pulse.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { injectGlobal } from 'styled-components'

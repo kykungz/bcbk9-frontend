@@ -12,9 +12,15 @@ const Button = styled.button`
   text-transform: uppercase;
   font-weight: bold;
   font-size: 24px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  transition: all 300ms;
 
   &:focus {
     outline: 0;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
   }
 `
 const PrimaryBtn = props => <Button {...props}>{props.children}</Button>

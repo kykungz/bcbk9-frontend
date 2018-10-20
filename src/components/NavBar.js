@@ -65,6 +65,7 @@ const TopDropDown = styled.div`
   background-color: white;
   display: none;
   z-index: 1000;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   @media (max-width: 650px) {
     display: block;
   }
