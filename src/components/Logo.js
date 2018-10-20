@@ -60,7 +60,7 @@ export default class extends React.Component {
       <div>
         <Container>
           {this.state.loading ? (
-            <PulseLoader color="#C14F6B" type="ball-pulse" />
+            <PulseLoader color="#a31d58" type="ball-pulse" />
           ) : (
             <LogoContainer>
               <LogoComponent src={Logo} />
