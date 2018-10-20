@@ -17,10 +17,12 @@ const LogoComponent = styled.img`
   width: 250px;
 `
 export default () => (
-  <Container>
-    <DetailContainer>
-      <LogoComponent src={Logo} />
-      <LogoComponent src={Barcamp} />
-    </DetailContainer>
-  </Container>
+  <div>
+    <Container>
+      <DetailContainer>
+        <LogoComponent src={Logo} />
+        <LogoComponent src={Barcamp} />
+      </DetailContainer>
+    </Container>
+  </div>
 )
