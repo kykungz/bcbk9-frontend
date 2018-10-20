@@ -21,7 +21,6 @@ class Home extends React.Component {
       <div>
         <NavBar />
         <Container>
-          <Location />
           {content.map((c, cidx) => (
             <Content title={c.title} key={cidx}>
               {c.text.map((t, tidx) => (
@@ -29,6 +28,7 @@ class Home extends React.Component {
               ))}
             </Content>
           ))}
+          <Location />
         </Container>
         <Sponsors />
       </div>
