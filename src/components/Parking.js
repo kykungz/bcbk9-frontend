@@ -17,7 +17,7 @@ const OptionContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 500px;
-  padding: 20px;
+  padding: 15px;
   background: linear-gradient(
     35deg,
     rgba(192, 77, 105, 0.5) 0%,
