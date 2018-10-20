@@ -28,6 +28,9 @@ const AllSocialContainer = styled.div`
   top: 100%;
   left: 0px;
   padding: 10px;
+  @media (max-width: 650px) {
+    display: none;
+  }
 `
 const SocialLogo = styled.img`
   height: 30px;
@@ -43,6 +46,24 @@ const SocialContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 5px 0px;
+`
+const ContactContainer = styled.div`
+  position: absolute;
+  transform: translate(-100%, -100%);
+  top: 100%;
+  left: 100%;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 650px) {
+    display: none;
+  }
+  padding: 10px;
+`
+const ContactText = styled.span`
+  font-weight: ${props => (props.border ? 'bold' : 'normal')};
+  text-align: right;
+  padding: 2px 0px;
+  color: white;
 `
 const SocialComponent = (pic, text, link = '/') => (
   <a href={link} style={{ textDecoration: 'none' }}>
@@ -65,5 +86,9 @@ export default () => (
         SocialComponent(TWLogo, '@barcampbangkhen'),
       ]}
     </AllSocialContainer>
+    <ContactContainer>
+      <ContactText border={true}>Contact Us</ContactText>
+      <ContactText border={false}>info@barcampbangkhen.org</ContactText>
+    </ContactContainer>
   </Container>
 )
