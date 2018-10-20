@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Button = styled.button`
   cursor: pointer;
-  background-image: linear-gradient(to right, #9a1e50 0%, #f09278 60%);
+  background-image: linear-gradient(45deg, #a31d58, #f39d84);
   border: 0;
   border-radius: 15px;
   padding: 10px 15px;
