@@ -8,13 +8,41 @@ import sellsuki from '../assets/silver/sellsuki.png'
 import wisesight from '../assets/silver/wisesight.svg'
 
 // const url =
-// 'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
+//   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
 
 const sponsors = {
-  // platinum: [url, url, url, url],
-  // gold: [url, url],
-  silver: [byteark, lnw, sellsuki, wisesight],
-  // bronze: [url, url],
+  // platinum: [
+  //   { image: url, url: 'https://apple.com' },
+  //   { image: url, url: 'https://apple.com' },
+  //   { image: url, url: 'https://apple.com' },
+  //   { image: url, url: 'https://apple.com' },
+  // ],
+  // gold: [
+  //   { image: url, url: 'https://apple.com' },
+  //   { image: url, url: 'https://apple.com' },
+  // ],
+  silver: [
+    {
+      image: byteark,
+      url: 'https://apple.com',
+    },
+    {
+      image: lnw,
+      url: 'https://apple.com',
+    },
+    {
+      image: sellsuki,
+      url: 'https://apple.com',
+    },
+    {
+      image: wisesight,
+      url: 'https://apple.com',
+    },
+  ],
+  // bronze: [
+  //   { image: url, url: 'https://apple.com' },
+  //   { image: url, url: 'https://apple.com' },
+  // ],
 }
 
 const All = styled.div`
@@ -29,7 +57,7 @@ const Container = styled.div`
   margin-top: 2em;
 `
 
-const Sponsor = styled.div`
+const Sponsor = styled.a`
   img {
     border-radius: 16px;
     width: 100%;
@@ -39,12 +67,12 @@ const SponsorContainer = styled.div`
   display: grid;
   grid-gap: 1em;
   grid-template-columns: 1fr 1fr;
-  margin: 1em 0;
+  margin: 1em auto;
 
   ${props =>
     props.size === 'platinum' &&
     css`
-      @media (max-width: 650px) {
+      @media (max-width: 480px) {
         grid-template-columns: 1fr;
       }
     `}
@@ -52,18 +80,22 @@ const SponsorContainer = styled.div`
   ${props =>
     props.size === 'gold' &&
     css`
-      margin: 1em 100px;
+      width: 90%;
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        width: 80%;
+      }
     `}
   ${props =>
     props.size === 'silver' &&
     css`
-      margin: 1em 150px;
+      width: 80%;
     `}
   
   ${props =>
     props.size === 'bronze' &&
     css`
-      margin: 1em 200px;
+      width: 70%;
     `}
 `
 
@@ -72,11 +104,11 @@ export default () => (
     <Container>
       {Object.keys(sponsors).map(size => (
         <SponsorContainer size={size} key={size}>
-          {sponsors[size].map((url, index) => (
-            <Sponsor key={index}>
+          {sponsors[size].map((sponsor, index) => (
+            <Sponsor href={sponsor.url} key={index}>
               <Zoom>
                 <Fade>
-                  <img src={url} />
+                  <img src={sponsor.image} />
                 </Fade>
               </Zoom>
             </Sponsor>
