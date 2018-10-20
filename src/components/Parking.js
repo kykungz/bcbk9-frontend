@@ -16,7 +16,11 @@ const Options = styled.div`
 const OptionContainer = styled.div`
   display: flex;
   width: 500px;
-  background: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    35deg,
+    rgba(192, 77, 105, 0.5) 0%,
+    rgba(243, 157, 132, 0.5) 70%
+  );
   border-radius: 16px;
   margin: 10px 0;
   ${Options} {
@@ -57,7 +61,7 @@ class Parking extends React.Component {
               Capacity: {option.capacity}
             </Option>
           </Options>
-          <Price style={{ color: color }}>{type.toUpperCase()}</Price>
+          <Price style={{ color }}>{type.toUpperCase()}</Price>
         </OptionContainer>
       </div>
     )
