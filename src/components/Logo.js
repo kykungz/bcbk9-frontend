@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/logo.svg'
+import Barcamp from '../assets/barcamp.svg'
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -8,11 +9,18 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `
+const DetailContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 const LogoComponent = styled.img`
-  width: 20vw;
+  width: 250px;
 `
 export default () => (
   <Container>
-    <LogoComponent src={Logo} />
+    <DetailContainer>
+      <LogoComponent src={Logo} />
+      <LogoComponent src={Barcamp} />
+    </DetailContainer>
   </Container>
 )
