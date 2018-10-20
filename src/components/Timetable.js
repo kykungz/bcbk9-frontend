@@ -23,28 +23,22 @@ const Peroid = styled.div`
     font-size: 13px;
   }
 `
+const eventTable  = (e) => {
+  return e.map((ev) => <Peroid>{ev}</Peroid>);
+}
+
 
 const Timetable = props => {
   return (
     <Container>
       <Timing>
-        <Peroid>09.00-10.00</Peroid>
-        <Peroid>10.00-10.45</Peroid>
-        <Peroid>10.45-11.45</Peroid>
-        <Peroid>11.45-12.45</Peroid>
-        <Peroid>12.45-16.00</Peroid>
-        <Peroid>16.00-18.30</Peroid>
+        {eventTable(props.time)}
       </Timing>
       <div>
-        <Line topDot dashed bottomDot length="250px" />
+        <Line topDot dashed bottomDot length={(42*props.event.length)+"px"} />
       </div>
       <Event>
-        <Peroid>{props.event[0]}</Peroid>
-        <Peroid>{props.event[1]}</Peroid>
-        <Peroid>{props.event[2]}</Peroid>
-        <Peroid>{props.event[3]}</Peroid>
-        <Peroid>{props.event[4]}</Peroid>
-        <Peroid>{props.event[5]}</Peroid>
+        {eventTable(props.event)}
       </Event>
     </Container>
   )

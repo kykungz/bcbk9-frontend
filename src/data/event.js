@@ -4,6 +4,6 @@ const event = [
   'Do something',
   'Do something',
   'Do something',
-  'Do something',
+  'Do something'
 ]
 export default event

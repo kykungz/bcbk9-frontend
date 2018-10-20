@@ -8,6 +8,7 @@ import content from '../data/content'
 import Date from '../components/Date'
 import Timetable from '../components/Timetable'
 import event from '../data/event'
+import timing from '../data/timing'
 
 const Container = styled.div`
   padding: 1em;
@@ -34,7 +35,7 @@ class Home extends React.Component {
             </Content>
           ))}
           <Sponsors />
-          <Timetable event={event} />
+        <Timetable event={event} time={timing}  />
         </Container>
       </div>
     )
