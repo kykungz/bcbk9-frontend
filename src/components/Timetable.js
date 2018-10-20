@@ -5,20 +5,25 @@ import time from '../data/time'
 
 const Time = styled.div`
   text-align: left;
-  width: 130px;
+  min-width: 130px;
   display: inline;
-  margin-bottom: 20px;
+  margin-bottom: 0.25em 0;
+  display: flex;
+  align-items: center;
 `
 const Event = styled.div`
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
 `
 
 const Timetable = styled.div`
   display: flex;
   font-size: 20px;
   max-width: 400px;
+  margin-top: 0.75em;
   @media (max-width: 350px) {
     font-size: 18px;
   }
