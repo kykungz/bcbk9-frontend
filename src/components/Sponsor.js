@@ -1,112 +1,87 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Zoom from 'react-reveal/Zoom'
 import Fade from 'react-reveal/Fade'
-// import url from '../assets/sponsor.jpeg'
+import byteark from '../assets/silver/byteark.svg'
+import lnw from '../assets/silver/lnw.png'
+import sellsuki from '../assets/silver/sellsuki.png'
+import wisesight from '../assets/silver/wisesight.svg'
 
-const All = styled.div`
-  margin: 0 1em;
-`
-const url =
-  'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
+// const url =
+//   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
 
 const sponsors = {
-  platinum: [[url, url], [url, url]],
-  gold: [[url, url]],
-  silver: [[url, url]],
+  // platinum: [url, url, url, url],
+  // gold: [url, url],
+  silver: [byteark, lnw, sellsuki, wisesight],
+  // bronze: [url, url],
 }
 
-const Sponsor = styled.div`
-  flex: 1;
-  text-align: center;
-  > img {
-    border-radius: 12px;
-  }
-`
-
-const PairContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-  padding: 0 ${props => props.size};
-  > :first-child {
-    text-align: right;
-  }
-  > :last-child {
-    text-align: left;
-  }
-  ${Sponsor} + ${Sponsor} {
-    margin-left: 1em;
-  };
+const All = styled.div`
+  padding: 1em;
+  padding-top: 2em;
+  background: salmon;
 `
 
 const Container = styled.div`
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
+  margin-top: 2em;
 `
 
-const SizeList = {
-  gold: '0px',
-  silver: '50px',
-  platinum: '100px',
-}
+const Sponsor = styled.div`
+  img {
+    border-radius: 16px;
+    width: 100%;
+  }
+`
+const SponsorContainer = styled.div`
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr;
+  margin: 1em 0;
+
+  ${props =>
+    props.size === 'platinum' &&
+    css`
+      @media (max-width: 650px) {
+        grid-template-columns: 1fr;
+      }
+    `}
+
+  ${props =>
+    props.size === 'gold' &&
+    css`
+      margin: 1em 100px;
+    `}
+  ${props =>
+    props.size === 'silver' &&
+    css`
+      margin: 1em 150px;
+    `}
+  
+  ${props =>
+    props.size === 'bronze' &&
+    css`
+      margin: 1em 200px;
+    `}
+`
 
 export default () => (
   <All>
     <Container>
-      {sponsors.gold.map((sponsor, i) => (
-        <PairContainer key={i + '1'} size={SizeList.gold}>
-          <Sponsor>
-            <Fade>
+      {Object.keys(sponsors).map(size => (
+        <SponsorContainer size={size} key={size}>
+          {sponsors[size].map((url, index) => (
+            <Sponsor key={index}>
               <Zoom>
-                <img src={sponsor[0]} />
+                <Fade>
+                  <img src={url} />
+                </Fade>
               </Zoom>
-            </Fade>
-          </Sponsor>
-          <Sponsor>
-            <Zoom>
-              <Fade>
-                <img src={sponsor[1]} />
-              </Fade>
-            </Zoom>
-          </Sponsor>
-        </PairContainer>
-      ))}
-      {sponsors.silver.map((sponsor, i) => (
-        <PairContainer key={i + '2'} size={SizeList.silver}>
-          <Sponsor>
-            <Zoom>
-              <Fade>
-                <img src={sponsor[0]} />
-              </Fade>
-            </Zoom>
-          </Sponsor>
-          <Sponsor>
-            <Zoom>
-              <Fade>
-                <img src={sponsor[1]} />
-              </Fade>
-            </Zoom>
-          </Sponsor>
-        </PairContainer>
-      ))}
-      {sponsors.platinum.map((sponsor, i) => (
-        <PairContainer key={i + '3'} size={SizeList.platinum}>
-          <Sponsor>
-            <Zoom>
-              <Fade>
-                <img src={sponsor[0]} />
-              </Fade>
-            </Zoom>
-          </Sponsor>
-          <Sponsor>
-            <Zoom>
-              <Fade>
-                <img src={sponsor[1]} />
-              </Fade>
-            </Zoom>
-          </Sponsor>
-        </PairContainer>
+            </Sponsor>
+          ))}
+        </SponsorContainer>
       ))}
     </Container>
   </All>
