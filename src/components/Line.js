@@ -6,7 +6,7 @@ const Dot = styled.div`
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  background-color: #a31d58;
+  background-color: ${props => (props.color ? props.color : '#a31d58')};
 `
 
 const Line = styled.div`
@@ -15,7 +15,8 @@ const Line = styled.div`
   top: 7px;
   right: 15px;
   height: ${props => props.length};
-  border-right: 5px ${props => (props.dashed ? 'dashed' : 'solid')} #a31d58;
+  border-right: 5px ${props => (props.dashed ? 'dashed' : 'solid')}
+    ${props => (props.color ? props.color : '#a31d58')};
 `
 
 const LineContainer = styled.div`
@@ -43,6 +44,7 @@ export default ({
   left,
   right,
   bottom,
+  color,
 }) => {
   let _length = validateStyleNumber(length ? length : '200px')
   let _rotate = '0'
@@ -58,10 +60,10 @@ export default ({
       left={validateStyleNumber(left ? left : '')}
       right={validateStyleNumber(right ? right : '')}
     >
-      <Line length={_length} dashed={dashed} />
+      <Line length={_length} dashed={dashed} color={color} />
       <div>
-        {topDot ? <Dot /> : ''}
-        {bottomDot ? <Dot length={_length} /> : ''}
+        {topDot ? <Dot color={color} /> : ''}
+        {bottomDot ? <Dot color={color} length={_length} /> : ''}
       </div>
     </LineContainer>
   )
