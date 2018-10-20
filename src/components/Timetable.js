@@ -1,12 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Line from './Line'
+import Content from './Content'
 
-const Container = styled.div`
-  display: flex;
-  position: relative;
-  justify-content: center;
-`
 const Timing = styled.div`
   margin-top: 20px;
   text-align: right;
@@ -17,31 +12,26 @@ const Event = styled.div`
   text-align: left;
   margin-left: 30px;
 `
-const Peroid = styled.div`
+const Period = styled.div`
   margin-bottom: 20px;
-  @media (max-width: 480px) {
-    font-size: 13px;
-  }
 `
-const eventTable  = (e) => {
-  return e.map((ev) => <Peroid>{ev}</Peroid>);
+
+const Timetable = styled.div`
+  display: flex;
+  font-size: 20px;
+`
+
+const eventTable = e => {
+  return e.map(ev => <Period key={ev}>{ev}</Period>)
 }
 
-
-const Timetable = props => {
+export default props => {
   return (
-    <Container>
-      <Timing>
-        {eventTable(props.time)}
-      </Timing>
-      <div>
-        <Line topDot dashed bottomDot length={(42*props.event.length)+"px"} />
-      </div>
-      <Event>
-        {eventTable(props.event)}
-      </Event>
-    </Container>
+    <Content title="TIMETABLE">
+      <Timetable>
+        <Timing>{eventTable(props.time)}</Timing>
+        <Event>{eventTable(props.event)}</Event>
+      </Timetable>
+    </Content>
   )
 }
-
-export default Timetable
