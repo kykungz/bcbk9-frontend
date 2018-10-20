@@ -3,7 +3,10 @@ import styled from 'styled-components'
 import Hamburger from '../assets/hamburger.svg'
 import FacebookIcon from '../assets/facebookIcon.png'
 import TwitterIcon from '../assets/twitterIcon.svg'
-const Container = styled.div``
+const Container = styled.div`
+  position: fixed;
+  z-index: 1000;
+`
 const MenuContainer = styled.div`
   width: 100vw;
   display: flex;
@@ -12,6 +15,7 @@ const MenuContainer = styled.div`
   transition: width 0, all 0.6s;
   background-color: white;
   @media (max-width: 650px) {
+    position: fixed;
     transition: 0.6s;
     top: ${prop => (prop.isDown ? '60px' : '-300px')};
     padding: 0px;
