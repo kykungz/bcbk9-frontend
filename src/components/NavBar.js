@@ -87,14 +87,14 @@ const LineContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -5px;
+  top: -12.5px;
   @media (max-width: 650px) {
     display: none;
   }
 `
 const Dot = styled.div`
-  height: 10px;
-  width: 10px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   background-color: #d1446a;
   margin: 0px 10px;
