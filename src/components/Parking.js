@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Content from './Content'
 import options from '../data/parking'
 
-const Options = styled.div`
+const Option = styled.div`
   position: relative;
   float: left;
   margin: 15px auto 15px 7%;
@@ -15,7 +15,9 @@ const Options = styled.div`
 
 const OptionContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 500px;
+  padding: 20px;
   background: linear-gradient(
     35deg,
     rgba(192, 77, 105, 0.5) 0%,
@@ -23,21 +25,22 @@ const OptionContainer = styled.div`
   );
   border-radius: 16px;
   margin: 10px 0;
-  ${Options} {
-    width: 340px;
-    margin-right: 50px;
+  ${Option} {
+    max-width: 340px;
+    margin-right: 20px;
+  }
+  * {
+    margin: auto;
   }
 `
 
 const Price = styled.h3`
-  margin-top: 40px;
+  justify-content: center;
+  padding: 10px 0;
 `
 
 const OptionName = styled.h3`
   margin: 0;
-`
-const Option = styled.div`
-  margin-bottom: 10px;
 `
 
 class Parking extends React.Component {
@@ -53,14 +56,12 @@ class Parking extends React.Component {
     return (
       <div style={{ display: 'flex' }}>
         <OptionContainer>
-          <Options>
-            <Option>
-              <OptionName>{option.name}</OptionName>
-              Location: {option.location}
-              <br />
-              Capacity: {option.capacity}
-            </Option>
-          </Options>
+          <Option>
+            <OptionName>{option.name}</OptionName>
+            Location: {option.location}
+            <br />
+            Capacity: {option.capacity}
+          </Option>
           <Price style={{ color }}>{type.toUpperCase()}</Price>
         </OptionContainer>
       </div>
