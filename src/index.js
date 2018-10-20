@@ -14,6 +14,9 @@ injectGlobal`
     background-size: cover;
     background-repeat: no-repeat;
   }
+  * {
+    font-family: 'Prompt', sans-serif;
+  }
 `
 
 ReactDOM.render(<App />, document.getElementById('root'))

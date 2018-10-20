@@ -42,6 +42,7 @@ const SContent = styled.div`
   border-left: 5px dashed #a31f59;
   p {
     text-indent: 2em;
+    font-size: 20px;
   }
   @media (max-width: 650px) {
     font-size: 14px;
