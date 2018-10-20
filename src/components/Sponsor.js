@@ -53,7 +53,6 @@ const Container = styled.div`
   padding: 1em;
   padding-top: 0;
   margin: 0 auto;
-  margin-top: 3em;
   max-width: 960px;
   @media (max-width: 650px) {
     padding: 0;
@@ -120,12 +119,11 @@ export default () => (
     <Container>
       <Line
         dashed
-        right="15px"
-        top="10px"
+        right="11px"
         topDot
-        bottomDot
-        length="600"
+        length="65"
         color="white"
+        style={{ transform: 'rotate(180deg)' }}
       />
       <Title>SPONSOR</Title>
       {Object.keys(sponsors).map(size => (
