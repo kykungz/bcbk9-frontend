@@ -2,7 +2,7 @@
 
 <p align="center">BarCamp Bangkhen 9 Website</p>
 
-<p align="center">https://2018.barcampbangkhen.com</p>
+<p align="center">https://2018.barcampbangkhen.org</p>
 
 ## Install the dependencies
 
