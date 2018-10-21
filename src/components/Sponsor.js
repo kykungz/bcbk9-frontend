@@ -23,7 +23,7 @@ import taskworld from '../assets/gold/taskworld.svg'
 import TW from '../assets/platinum/TW.png'
 import wongnai from '../assets/platinum/wongnai-white.svg'
 import cpsk from '../assets/platinum/cpsk.svg'
-// import exxon from '../assets/platinum/exxonmobil.svg'
+import exxon from '../assets/platinum/exxonmobil.svg'
 
 // const url =
 //   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
@@ -33,7 +33,7 @@ const sponsors = {
     { image: wongnai, url: 'https://www.wongnai.com/' },
     { image: TW, url: 'https://www.thoughtworks.com/' },
     { image: cpsk, url: 'https://www.cpe.ku.ac.th/' },
-    // { image: exxon, url: 'https://corporate.exxonmobil.com/en' },
+    { image: exxon, url: 'https://corporate.exxonmobil.com/en' },
   ],
   gold: [
     { image: metromerce, url: 'https://www.metromerce.com/' },
