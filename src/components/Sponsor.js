@@ -147,11 +147,11 @@ export default () => (
       <Title>SPONSORS</Title>
       {Object.entries(sponsors).map(([size, arr]) => (
         <SponsorContainer size={size} key={size}>
-          {arr.map((sponsor, index) => (
-            <Sponsor href={sponsor.url} key={index}>
+          {arr.map(({ image, url }, index) => (
+            <Sponsor href={url} key={index}>
               <Zoom>
                 <Fade>
-                  <img src={sponsor.image} alt="sponsor" />
+                  <img src={image} alt="sponsor" />
                 </Fade>
               </Zoom>
             </Sponsor>
