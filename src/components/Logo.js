@@ -28,7 +28,7 @@ const RegisterButton = styled(PrimaryBtn)`
 `
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   padding: 0 1em;
   box-sizing: border-box;
@@ -49,7 +49,7 @@ const LogoContainer = styled.div`
   flex-direction: column;
   padding: 0 3em;
   min-height: 370px;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
 
   img {
