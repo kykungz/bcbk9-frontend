@@ -20,7 +20,7 @@ injectGlobal`
     position: fixed;
     z-index: -1;
     background-image: url("${background}");
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
