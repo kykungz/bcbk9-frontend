@@ -12,10 +12,6 @@ const RegisterButton = styled(PrimaryBtn)`
   padding: 10px 20px;
   animation: Pulse 1s infinite ease-out;
 
-  :hover {
-    animation: none;
-  }
-
   @keyframes Pulse {
     0%,
     100% {
@@ -40,6 +36,11 @@ const Container = styled.div`
 const LogoComponent = styled.img`
   width: 100%;
   max-width: 240px;
+`
+
+const PulseLoader = styled(Loader)`
+  transform: scale(1.2);
+  padding: 170px 0;
 `
 
 const LogoContainer = styled.div`
@@ -79,11 +80,6 @@ const DetailContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-
-const PulseLoader = styled(Loader)`
-  transform: scale(1.2);
-  padding: 185px 0;
 `
 
 const DueDate = styled.h2`

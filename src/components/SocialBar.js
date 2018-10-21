@@ -13,8 +13,13 @@ const SocialBar = styled.div`
   .social-svg {
     background: white;
   }
+
   a {
     margin-bottom: 0.5em;
+    transition: all 300ms;
+    :hover {
+      filter: brightness(1.1);
+    }
   }
 
   @media (max-width: 650px) {
