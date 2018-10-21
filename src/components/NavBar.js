@@ -10,10 +10,10 @@ const Container = styled.div`
   z-index: 1000;
 `
 const MenuContainer = styled.div`
-  width: 100vw;
+  max-width: 970px;
+  margin: auto;
   display: flex;
   box-sizing: border-box;
-  padding: 0px 100px;
   transition: width 0, all 0.6s;
   background-color: white;
   @media (max-width: 650px) {
@@ -30,7 +30,7 @@ const MenuContainer = styled.div`
 const Menu = styled(Link)`
   flex: 1;
   text-align: center;
-  padding: 20px 20px;
+  padding: 20px 0;
   transition: 0.6s;
   display: flex;
   justify-content: center;
