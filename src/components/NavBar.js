@@ -115,12 +115,19 @@ const menuGroup = [
   { name: 'timetable', url: '/' },
   { name: 'location', url: '/' },
   { name: 'sponsor', url: '/' },
-  { name: 'faq', url: '/' },
+  { name: 'faqs', url: '/' },
   { name: 'sessions', url: '/' },
 ]
 
 const menu = (name, url) => (
-  <Menu to={name} key={name} spy={true} smooth={true} duration={1000}>
+  <Menu
+    to={name}
+    key={name}
+    spy={true}
+    smooth={true}
+    duration={1000}
+    offset={-80}
+  >
     <MenuName>
       <A href={url}>{name.toUpperCase()}</A>
     </MenuName>

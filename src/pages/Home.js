@@ -37,12 +37,16 @@ class Home extends React.Component {
               ))}
             </Content>
           ))}
-          <Timetable />
+          <Element name="timetable">
+            <Timetable />
+          </Element>
           <Element name="location">
             <Location />
           </Element>
           <Parking />
-          <Faq />
+          <Element name="faqs">
+            <Faq />
+          </Element>
         </Container>
         <Element name="sponsor">
           <Sponsors />
