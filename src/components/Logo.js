@@ -7,20 +7,22 @@ import PrimaryBtn from './PrimaryBtn'
 import Loader from 'react-loaders'
 
 const RegisterButton = styled(PrimaryBtn)`
+  :not(:disabled) {
+    animation: Pulse 1s infinite ease-out;
+
+    @keyframes Pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  }
   margin: auto;
   margin-top: 1em;
   padding: 10px 20px;
-  animation: Pulse 1s infinite ease-out;
-
-  @keyframes Pulse {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-  }
 `
 
 const Container = styled.div`
@@ -114,13 +116,13 @@ export default class extends React.PureComponent {
             </LogoContainer>
           )}
           <DueDate>25 November 2018</DueDate>
-          <a
+          {/* <a
             href="https://goo.gl/Shs6VY"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <RegisterButton>register now</RegisterButton>
-          </a>
+          </a> */}
+          <RegisterButton>register now</RegisterButton>
         </DetailContainer>
       </Container>
     )
