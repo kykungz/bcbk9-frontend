@@ -21,7 +21,8 @@ import taskworld from '../assets/gold/taskworld.svg'
 
 //platinum
 import TW from '../assets/platinum/TW.png'
-import wongnai from '../assets/platinum/wongnai.png'
+import wongnai from '../assets/platinum/wongnai-white.svg'
+import cpsk from '../assets/platinum/cpsk.svg'
 
 // const url =
 //   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
@@ -30,6 +31,7 @@ const sponsors = {
   platinum: [
     { image: wongnai, url: 'https://www.wongnai.com/' },
     { image: TW, url: 'https://www.thoughtworks.com/' },
+    { image: cpsk, url: 'https://www.thoughtworks.com/' },
   ],
   gold: [
     { image: metromerce, url: 'https://www.metromerce.com/' },
