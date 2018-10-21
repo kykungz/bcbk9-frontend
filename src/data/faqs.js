@@ -2,7 +2,7 @@ import React from 'react'
 
 export default [
   {
-    question: `งาน Barcamp Bangkhen 9 จัดเมื่อไหร่ ที่ไหน`,
+    question: `งาน BarCamp Bangkhen 9 จัดเมื่อไหร่ ที่ไหน`,
     answer: `งานจัดวันที่ 25 พฤศจิกายน 2561 นี้  งานเริ่มเวลา  9:00 น จัดที่ คณะวิศวกรรมศาสตร์  อาคาร IUP ชั้น2`,
   },
   {
@@ -25,7 +25,7 @@ export default [
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://www.facebook.com/Barcampbangkhen"
+          href="https://www.facebook.com/BarCampbangkhen"
         >
           Facebook
         </a>{' '}
