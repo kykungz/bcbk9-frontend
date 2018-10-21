@@ -9,7 +9,7 @@ const content = [
   {
     title: 'PARTICIPANTS',
     text: [
-      'Everyone! Partipants like you are the essential of our event.',
+      'Everyone! Participants like you are essential to our event.',
       'สำหรับบาร์แคมป์บางเขน ไม่ว่าคุณจะเป็นใคร เรียนที่ไหน หรือทำงานอะไร ก็สามารถร่วมแบ่งปันไอเดียหรือเรื่องราวดี ๆ ได้ทั้งนั้น',
     ],
   },
