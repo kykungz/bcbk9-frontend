@@ -21,8 +21,22 @@ export default [
     question: `อยากติดตามความเคลื่อนไหวของงาน ต้องติดตามทางช่องทางไหน`,
     answer: (
       <>
-        ได้ทั้ง <a href="https://www.facebook.com/Barcampbangkhen">Facebook</a>{' '}
-        และ <a href="https://www.twitter.com/barcampbangkhen">Twitter</a>{' '}
+        ได้ทั้ง{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.facebook.com/Barcampbangkhen"
+        >
+          Facebook
+        </a>{' '}
+        และ{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.twitter.com/barcampbangkhen"
+        >
+          Twitter
+        </a>{' '}
         เลยครับ
       </>
     ),
