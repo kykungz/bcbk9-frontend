@@ -145,9 +145,9 @@ export default () => (
         style={{ transform: 'rotate(180deg)', marginTop: '7px' }}
       />
       <Title>SPONSORS</Title>
-      {Object.entries(sponsors).map(arr => (
-        <SponsorContainer size={arr[0]} key={arr[0]}>
-          {arr[1].map((sponsor, index) => (
+      {Object.entries(sponsors).map(([size, arr]) => (
+        <SponsorContainer size={size} key={size}>
+          {arr.map((sponsor, index) => (
             <Sponsor href={sponsor.url} key={index}>
               <Zoom>
                 <Fade>
