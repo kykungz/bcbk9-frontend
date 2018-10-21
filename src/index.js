@@ -10,8 +10,6 @@ import background from './assets/background.png'
 injectGlobal`
   body:before {
     content: "";
-    top: 0;
-    left: 0;
     opacity: var(--opacity, 1);
     top: 0;
     left: 0;
