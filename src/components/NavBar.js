@@ -9,6 +9,12 @@ const Container = styled.div`
   position: fixed;
   z-index: 1000;
 `
+
+const WhiteContainer = styled.div`
+  width: 100vw;
+  background: white;
+`
+
 const MenuContainer = styled.div`
   max-width: 970px;
   margin: auto;
@@ -175,9 +181,11 @@ export default class extends Component {
           size="50% 50%"
         />
       </TopDropDown>
-      <MenuContainer isDown={this.state.isDown}>
-        {menuGroup.map(e => this.menu(e.name, e.url))}
-      </MenuContainer>
+      <WhiteContainer>
+        <MenuContainer isDown={this.state.isDown}>
+          {menuGroup.map(e => this.menu(e.name, e.url))}
+        </MenuContainer>
+      </WhiteContainer>
       <LineContainer>
         <Line from="#F9967A" to="#D32D64" />
         <Dot />
