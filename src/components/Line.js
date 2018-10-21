@@ -45,6 +45,7 @@ export default ({
   right,
   bottom,
   color,
+  className,
 }) => {
   let _length = validateStyleNumber(length ? length : '200px')
   let _rotate = '0'
@@ -52,6 +53,7 @@ export default ({
   else if (rotate && rotate.includes('l')) _rotate = '45'
   return (
     <LineContainer
+      className={className}
       style={style}
       rotate={_rotate}
       length={_length}

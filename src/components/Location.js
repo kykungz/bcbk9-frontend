@@ -7,7 +7,7 @@ const Map = styled.iframe`
   width: 100%;
   height: 360px;
   border: none;
-  margin: 2em auto;
+  margin: 1em auto;
 `
 
 const Title = styled.h1`
@@ -15,9 +15,13 @@ const Title = styled.h1`
   margin: 60px 0 0 150px;
 `
 
+const StyledLine = styled(Line)`
+  transform: rotate(-60deg);
+`
+
 export default () => (
   <div>
-    <Line rotate="r" length="120" top="85" right="48" topDot bottomDot />
+    <StyledLine length="116" top="72" right="54" topDot bottomDot />
     <Zoom>
       <Title>LOCATION</Title>
     </Zoom>
