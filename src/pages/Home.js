@@ -50,7 +50,7 @@ class Home extends React.Component {
             <Faq />
           </Element>
         </Container>
-        <Element name="sponsor">
+        <Element name="sponsors">
           <Sponsors />
         </Element>
       </div>
