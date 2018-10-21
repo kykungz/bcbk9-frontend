@@ -113,7 +113,7 @@ export default class extends React.PureComponent {
               <LogoComponent style={{ marginTop: '0.5em' }} src={Barcamp} />
             </LogoContainer>
           )}
-          <DueDate>27 November 2018</DueDate>
+          <DueDate>25 November 2018</DueDate>
           <a
             href="https://goo.gl/Shs6VY"
             rel="noopener noreferrer"
