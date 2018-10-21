@@ -29,6 +29,12 @@ const Timetable = styled.div`
   }
 `
 
+const StyledContent = styled(Content)`
+  ${Timetable}:last-child {
+    margin-bottom: 20px;
+  }
+`
+
 // const eventTable = e => {
 //   return e.map(ev => <Period key={ev}>{ev}</Period>)
 // }
@@ -37,13 +43,13 @@ export default () => {
   // <Timing>{eventTable(props.time)}</Timing>
   // <Event>{eventTable(props.event)}</Event>
   return (
-    <Content title="TIMETABLE">
+    <StyledContent title="TIMETABLE">
       {time.map(item => (
         <Timetable key={item.event}>
           <Time>{item.time}</Time>
           <Event>{item.event}</Event>
         </Timetable>
       ))}
-    </Content>
+    </StyledContent>
   )
 }
