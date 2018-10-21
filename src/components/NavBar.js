@@ -114,7 +114,7 @@ const Line = styled.div`
 const menuGroup = [
   { name: 'timetable', url: '/' },
   { name: 'location', url: '/' },
-  { name: 'sponsor', url: '/' },
+  { name: 'sponsors', url: '/' },
   { name: 'faq', url: '/' },
   { name: 'sessions', url: '/' },
 ]
@@ -141,8 +141,22 @@ export default class extends Component {
           float="left"
           size="80% 80%"
         />
-        <Button url={TwitterIcon} href="/" float="right" size="50% 50%" />
-        <Button url={FacebookIcon} href="/" float="right" size="50% 50%" />
+        <Button
+          url={TwitterIcon}
+          target="_blank"
+          rel="noopenner noreferrer"
+          href="https://www.twitter.com/barcampbangkhen"
+          float="right"
+          size="50% 50%"
+        />
+        <Button
+          url={FacebookIcon}
+          target="_blank"
+          rel="noopenner noreferrer"
+          href="https://www.facebook.com/Barcampbangkhen"
+          float="right"
+          size="50% 50%"
+        />
       </TopDropDown>
       <MenuContainer isDown={this.state.isDown}>
         {menuGroup.map(e => menu(e.name, e.url))}

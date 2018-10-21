@@ -8,7 +8,6 @@ const Option = styled.div`
   float: left;
   margin: 15px auto 15px 7%;
   @media (max-width: 650px) {
-    width: 80%;
     margin-left: 10px;
   }
 `
@@ -18,12 +17,9 @@ const OptionContainer = styled.div`
   flex-wrap: wrap;
   width: 500px;
   padding: 15px;
-  background: linear-gradient(
-    35deg,
-    rgba(192, 77, 105, 0.5) 0%,
-    rgba(243, 157, 132, 0.5) 70%
-  );
+  background: rgba(255, 157, 132, 0.2);
   border-radius: 16px;
+  border: medium solid #c04d69;
   margin: 10px 0;
   ${Option} {
     max-width: 340px;
