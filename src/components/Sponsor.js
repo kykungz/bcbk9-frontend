@@ -112,7 +112,7 @@ const SponsorContainer = styled.div`
 const Title = styled.h1`
   font-size: 28px;
   margin: 0 2.5em;
-  padding: 30px 0;
+  padding: 40px 0;
   color: white;
 `
 
@@ -127,7 +127,7 @@ export default () => (
         color="white"
         style={{ transform: 'rotate(180deg)', marginTop: '7px' }}
       />
-      <Title>SPONSOR</Title>
+      <Title>SPONSORS</Title>
       {Object.keys(sponsors).map(size => (
         <SponsorContainer size={size} key={size}>
           {sponsors[size].map((sponsor, index) => (
