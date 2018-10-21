@@ -17,6 +17,7 @@ const MenuContainer = styled.div`
   transition: width 0, all 0.6s;
   background-color: white;
   @media (max-width: 650px) {
+    min-width: 100vw;
     position: fixed;
     transition: 0.6s;
     top: ${prop => (prop.isDown ? '60px' : '-300px')};
@@ -119,26 +120,35 @@ const menuGroup = [
   { name: 'sessions', url: '/' },
 ]
 
-const menu = (name, url) => (
-  <Menu
-    to={name}
-    key={name}
-    spy={true}
-    smooth={true}
-    duration={1000}
-    offset={-80}
-  >
-    <MenuName>
-      <A href={url}>{name.toUpperCase()}</A>
-    </MenuName>
-  </Menu>
-)
-
 export default class extends Component {
-  state = { isDown: false }
-  onClickBurger = () => {
+  constructor(props) {
+    super(props)
+    this.state = { isDown: false }
+    this.onClickBurger = this.onClickBurger.bind(this)
+  }
+
+  onClickBurger() {
     this.setState({ isDown: !this.state.isDown })
   }
+
+  menu(name, url) {
+    return (
+      <Menu
+        to={name}
+        key={name}
+        spy={true}
+        smooth={true}
+        duration={1000}
+        offset={-80}
+        onClick={() => this.onClickBurger()}
+      >
+        <MenuName>
+          <A href={url}>{name.toUpperCase()}</A>
+        </MenuName>
+      </Menu>
+    )
+  }
+
   render = () => (
     <Container>
       <TopDropDown>
@@ -166,7 +176,7 @@ export default class extends Component {
         />
       </TopDropDown>
       <MenuContainer isDown={this.state.isDown}>
-        {menuGroup.map(e => menu(e.name, e.url))}
+        {menuGroup.map(e => this.menu(e.name, e.url))}
       </MenuContainer>
       <LineContainer>
         <Line from="#F9967A" to="#D32D64" />
