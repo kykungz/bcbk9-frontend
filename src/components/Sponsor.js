@@ -134,7 +134,7 @@ export default () => (
             <Sponsor href={sponsor.url} key={index}>
               <Zoom>
                 <Fade>
-                  <img src={sponsor.image} />
+                  <img src={sponsor.image} alt="sponsor" />
                 </Fade>
               </Zoom>
             </Sponsor>

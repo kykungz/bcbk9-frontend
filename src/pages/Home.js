@@ -9,6 +9,7 @@ import styled from 'styled-components'
 import content from '../data/content'
 import Timetable from '../components/Timetable'
 import Sponsors from '../components/Sponsor'
+import SocialBar from '../components/SocialBar'
 import { Element } from 'react-scroll'
 
 const Container = styled.div`
@@ -28,6 +29,7 @@ class Home extends React.Component {
     return (
       <div>
         <NavBar />
+        <SocialBar />
         <Logo />
         <Container>
           {content.map((c, cidx) => (
