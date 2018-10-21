@@ -5,5 +5,5 @@ export default [
   { time: '13:00-15:00', event: 'Afternoon sessions' },
   { time: '15:00-15:30', event: 'Break' },
   { time: '15:30-17:00', event: 'Evening sessions' },
-  { time: '17:00-20:00', event: 'After party' },
+  { time: '17:00-19:00', event: 'After party' },
 ]
