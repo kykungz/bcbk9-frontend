@@ -18,6 +18,7 @@ const MenuContainer = styled.div`
   transition: width 0, all 0.6s;
   background-color: white;
   @media (max-width: 650px) {
+    width: 100%;
     position: fixed;
     transition: 0.6s;
     top: ${prop => (prop.isDown ? '60px' : '-300px')};
