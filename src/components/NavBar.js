@@ -8,6 +8,7 @@ import { Link } from 'react-scroll'
 const Container = styled.div`
   position: fixed;
   z-index: 1000;
+  background: linear-gradient(to bottom, white 75%, transparent 100%);
 `
 const MenuContainer = styled.div`
   max-width: 970px;
