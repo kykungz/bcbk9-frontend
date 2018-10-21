@@ -122,7 +122,7 @@ export default class extends React.PureComponent {
             target="_blank"
           >
           </a> */}
-          <RegisterButton>register now</RegisterButton>
+          <RegisterButton disabled>register now</RegisterButton>
         </DetailContainer>
       </Container>
     )
