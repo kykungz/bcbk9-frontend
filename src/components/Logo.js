@@ -116,13 +116,13 @@ export default class extends React.PureComponent {
             </LogoContainer>
           )}
           <DueDate>25 November 2018</DueDate>
-          {/* <a
+          <a
             href="https://goo.gl/Shs6VY"
             rel="noopener noreferrer"
             target="_blank"
           >
-          </a> */}
-          <RegisterButton disabled>register now</RegisterButton>
+            <RegisterButton>register now</RegisterButton>
+          </a>
         </DetailContainer>
       </Container>
     )
