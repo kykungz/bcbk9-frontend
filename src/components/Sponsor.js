@@ -2,47 +2,64 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Zoom, Fade } from 'react-reveal'
 import Line from './Line'
+//bronze
+import ookbee from '../assets/bronze/ookbee.svg'
+import pantip from '../assets/bronze/pantip-purple.svg'
+//silver
+import gummybear from '../assets/silver/gummybear.png'
 import byteark from '../assets/silver/byteark.svg'
 import lnw from '../assets/silver/lnw.png'
 import sellsuki from '../assets/silver/sellsuki.png'
 import wisesight from '../assets/silver/wisesight.svg'
-
+import yannix from '../assets/silver/yannix.svg'
+//gold
+import metromerce from '../assets/gold/metromerce.svg'
+import taskworld from '../assets/gold/taskworld.svg'
+//platinum
+import TW from '../assets/platinum/TW.png'
+import wongnai from '../assets/platinum/wongnai.png'
 // const url =
 //   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
 
 const sponsors = {
-  // platinum: [
-  //   { image: url, url: 'https://apple.com' },
-  //   { image: url, url: 'https://apple.com' },
-  //   { image: url, url: 'https://apple.com' },
-  //   { image: url, url: 'https://apple.com' },
-  // ],
-  // gold: [
-  //   { image: url, url: 'https://apple.com' },
-  //   { image: url, url: 'https://apple.com' },
-  // ],
+  platinum: [
+    { image: wongnai, url: 'https://www.wongnai.com/' },
+    { image: TW, url: 'https://www.thoughtworks.com/' },
+  ],
+  gold: [
+    { image: metromerce, url: 'https://www.metromerce.com/' },
+    { image: taskworld, url: 'https://taskworld.com/' },
+  ],
   silver: [
     {
       image: byteark,
-      url: 'https://apple.com',
+      url: 'https://www.byteark.com/en/home-landing-page/',
     },
     {
       image: lnw,
-      url: 'https://apple.com',
+      url: 'https://lnw.co.th/',
     },
     {
       image: sellsuki,
-      url: 'https://apple.com',
+      url: 'https://www.sellsuki.co.th/',
     },
     {
       image: wisesight,
-      url: 'https://apple.com',
+      url: 'https://wisesight.com/',
+    },
+    {
+      image: yannix,
+      url: 'https://www.yannix.com/',
+    },
+    {
+      image: gummybear,
+      url: 'http://gummybear.asia/',
     },
   ],
-  // bronze: [
-  //   { image: url, url: 'https://apple.com' },
-  //   { image: url, url: 'https://apple.com' },
-  // ],
+  bronze: [
+    { image: ookbee, url: 'http://www.ookbee.com/' },
+    { image: pantip, url: 'https://pantip.com/' },
+  ],
 }
 
 const All = styled.div`
@@ -101,7 +118,7 @@ const SponsorContainer = styled.div`
     css`
       width: 80%;
     `}
-  
+
   ${props =>
     props.size === 'bronze' &&
     css`
