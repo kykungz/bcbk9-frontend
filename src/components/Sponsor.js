@@ -20,9 +20,9 @@ import metromerce from '../assets/gold/metromerce.svg'
 import taskworld from '../assets/gold/taskworld.svg'
 
 //platinum
+import cpsk from '../assets/platinum/cpsk.svg'
 import TW from '../assets/platinum/TW.png'
 import wongnai from '../assets/platinum/wongnai-white.svg'
-import cpsk from '../assets/platinum/cpsk.svg'
 import exxon from '../assets/platinum/exxonmobil.svg'
 
 // const url =
@@ -30,10 +30,10 @@ import exxon from '../assets/platinum/exxonmobil.svg'
 
 const sponsors = {
   platinum: [
-    { image: wongnai, url: 'https://www.wongnai.com/' },
-    { image: TW, url: 'https://www.thoughtworks.com/' },
     { image: cpsk, url: 'https://www.cpe.ku.ac.th/' },
     { image: exxon, url: 'https://corporate.exxonmobil.com/en' },
+    { image: TW, url: 'https://www.thoughtworks.com/' },
+    { image: wongnai, url: 'https://www.wongnai.com/' },
   ],
   gold: [
     { image: metromerce, url: 'https://www.metromerce.com/' },
@@ -43,6 +43,10 @@ const sponsors = {
     {
       image: byteark,
       url: 'https://www.byteark.com/en/home-landing-page/',
+    },
+    {
+      image: gummybear,
+      url: 'http://gummybear.asia/',
     },
     {
       image: lnw,
@@ -59,10 +63,6 @@ const sponsors = {
     {
       image: yannix,
       url: 'https://www.yannix.com/',
-    },
-    {
-      image: gummybear,
-      url: 'http://gummybear.asia/',
     },
   ],
   bronze: [
