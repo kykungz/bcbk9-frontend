@@ -26,4 +26,4 @@ yarn build
 
 ## Deployment
 
-When a commit is added to `production` branch, it will be deployed to https://2018.barcampbangkhen.com by the CI.
+When a commit is added to `production` branch, it will be deployed to https://2018.barcampbangkhen.org by the CI.
