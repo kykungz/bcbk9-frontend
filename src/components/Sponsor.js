@@ -150,8 +150,12 @@ export default () => (
       <StyledLine dashed right="11px" topDot length="65" color="white" />
       <Title>SPONSORS</Title>
       {Object.keys(sponsors).map(size => (
-        <>
-          <SponsorContainer size={size} key={size}>
+        <div key={size}>
+          <SponsorContainer
+            size={size}
+            key={size}
+            style={{ paddingBottom: size === 'silver' ? '1em' : '2em' }}
+          >
             {sponsors[size].map((sponsor, index) => (
               <Sponsor href={sponsor.url} key={index}>
                 <Zoom>
@@ -165,15 +169,15 @@ export default () => (
           <SponsorContainer
             size="silver"
             style={{
-              paddingLeft: '50%',
-              display: size === 'silver' ? 'grid' : 'none',
+              display: size === 'silver' ? 'flex' : 'none',
+              justifyContent: 'center',
               marginTop: '0px',
+              padding: '0em 0.5em 0em 0.5em',
+              marginBottom: '2em',
+              boxSizing: 'border-box',
             }}
           >
-            <Sponsor
-              href="https://www.kulap.io/"
-              style={{ transform: 'translateX(-50%)' }}
-            >
+            <Sponsor href="https://www.kulap.io/" style={{ width: '50%' }}>
               <Zoom>
                 <Fade>
                   <img src={kulap} alt="sponsor" />
@@ -181,7 +185,7 @@ export default () => (
               </Zoom>
             </Sponsor>
           </SponsorContainer>
-        </>
+        </div>
       ))}
     </Container>
   </All>
