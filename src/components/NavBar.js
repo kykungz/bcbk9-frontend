@@ -9,6 +9,12 @@ const Container = styled.div`
   position: fixed;
   z-index: 1000;
 `
+
+const WhiteContainer = styled.div`
+  width: 100vw;
+  background: white;
+`
+
 const MenuContainer = styled.div`
   max-width: 970px;
   margin: auto;
@@ -17,6 +23,7 @@ const MenuContainer = styled.div`
   transition: width 0, all 0.6s;
   background-color: white;
   @media (max-width: 650px) {
+    min-width: 100vw;
     position: fixed;
     transition: 0.6s;
     top: ${prop => (prop.isDown ? '60px' : '-300px')};
@@ -119,26 +126,35 @@ const menuGroup = [
   { name: 'sessions', url: '/' },
 ]
 
-const menu = (name, url) => (
-  <Menu
-    to={name}
-    key={name}
-    spy={true}
-    smooth={true}
-    duration={1000}
-    offset={-80}
-  >
-    <MenuName>
-      <A href={url}>{name.toUpperCase()}</A>
-    </MenuName>
-  </Menu>
-)
-
 export default class extends Component {
-  state = { isDown: false }
-  onClickBurger = () => {
+  constructor(props) {
+    super(props)
+    this.state = { isDown: false }
+    this.onClickBurger = this.onClickBurger.bind(this)
+  }
+
+  onClickBurger() {
     this.setState({ isDown: !this.state.isDown })
   }
+
+  menu(name, url) {
+    return (
+      <Menu
+        to={name}
+        key={name}
+        spy={true}
+        smooth={true}
+        duration={1000}
+        offset={-80}
+        onClick={() => this.onClickBurger()}
+      >
+        <MenuName>
+          <A href={url}>{name.toUpperCase()}</A>
+        </MenuName>
+      </Menu>
+    )
+  }
+
   render = () => (
     <Container>
       <TopDropDown>
@@ -165,9 +181,11 @@ export default class extends Component {
           size="50% 50%"
         />
       </TopDropDown>
-      <MenuContainer isDown={this.state.isDown}>
-        {menuGroup.map(e => menu(e.name, e.url))}
-      </MenuContainer>
+      <WhiteContainer>
+        <MenuContainer isDown={this.state.isDown}>
+          {menuGroup.map(e => this.menu(e.name, e.url))}
+        </MenuContainer>
+      </WhiteContainer>
       <LineContainer>
         <Line from="#F9967A" to="#D32D64" />
         <Dot />

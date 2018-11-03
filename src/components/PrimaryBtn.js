@@ -1,7 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 
-const Button = styled.button`
+const PrimaryBtn = styled.button`
   cursor: pointer;
   background-image: linear-gradient(45deg, #a31d58, #f39d84);
   border: 0;
@@ -19,10 +18,17 @@ const Button = styled.button`
     outline: 0;
   }
 
-  &:hover {
+  :disabled {
+    cursor: initial;
+    background: gray;
+    :hover {
+      filter: none;
+    }
+  }
+
+  :hover {
     filter: brightness(1.1);
   }
 `
-const PrimaryBtn = props => <Button {...props}>{props.children}</Button>
 
 export default PrimaryBtn

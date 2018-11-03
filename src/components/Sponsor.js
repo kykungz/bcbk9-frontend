@@ -2,9 +2,11 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { Zoom, Fade } from 'react-reveal'
 import Line from './Line'
+
 //bronze
 import ookbee from '../assets/bronze/ookbee.svg'
 import pantip from '../assets/bronze/pantip-purple.svg'
+
 //silver
 import gummybear from '../assets/silver/gummybear.png'
 import byteark from '../assets/silver/byteark.svg'
@@ -12,19 +14,28 @@ import lnw from '../assets/silver/lnw.png'
 import sellsuki from '../assets/silver/sellsuki.png'
 import wisesight from '../assets/silver/wisesight.svg'
 import yannix from '../assets/silver/yannix.svg'
+
+import kulap from '../assets/silver/kulap.svg'
+
 //gold
 import metromerce from '../assets/gold/metromerce.svg'
 import taskworld from '../assets/gold/taskworld.svg'
+
 //platinum
+import cpsk from '../assets/platinum/cpsk.svg'
 import TW from '../assets/platinum/TW.png'
-import wongnai from '../assets/platinum/wongnai.png'
+import wongnai from '../assets/platinum/wongnai-white.svg'
+import exxon from '../assets/platinum/exxonmobil.svg'
+
 // const url =
 //   'http://2017.barcampbangkhen.org/static/media/platinum-2.5e7a55c7.svg?fbclid=IwAR2UgEdsDE7BnmFDt51eiayieUkmfRkkn_hMZhFdOkQHj9YvoyCtIyJTH9Q'
 
 const sponsors = {
   platinum: [
-    { image: wongnai, url: 'https://www.wongnai.com/' },
+    { image: cpsk, url: 'https://www.cpe.ku.ac.th/' },
+    { image: exxon, url: 'https://corporate.exxonmobil.com/en' },
     { image: TW, url: 'https://www.thoughtworks.com/' },
+    { image: wongnai, url: 'https://www.wongnai.com/' },
   ],
   gold: [
     { image: metromerce, url: 'https://www.metromerce.com/' },
@@ -34,6 +45,10 @@ const sponsors = {
     {
       image: byteark,
       url: 'https://www.byteark.com/en/home-landing-page/',
+    },
+    {
+      image: gummybear,
+      url: 'http://gummybear.asia/',
     },
     {
       image: lnw,
@@ -51,10 +66,6 @@ const sponsors = {
       image: yannix,
       url: 'https://www.yannix.com/',
     },
-    {
-      image: gummybear,
-      url: 'http://gummybear.asia/',
-    },
   ],
   bronze: [
     { image: ookbee, url: 'http://www.ookbee.com/' },
@@ -71,16 +82,7 @@ const Container = styled.div`
   padding-top: 0;
   margin: 0 auto;
   max-width: 960px;
-  @media (max-width: 650px) {
-    padding: 0;
-  }
 `
-
-// const Container = styled.div`
-//   max-width: 800px;
-//   margin: auto;
-//   margin-top: 2em;
-// `
 
 const Sponsor = styled.a`
   img {
@@ -133,30 +135,53 @@ const Title = styled.h1`
   color: white;
 `
 
+const StyledLine = styled(Line)`
+  transform: rotate(180deg);
+  margin-top: 7px;
+  @media (max-width: 650px) {
+    margin-left: -5px;
+  }
+`
+
 export default () => (
   <All>
     <Container>
-      <Line
-        dashed
-        right="11px"
-        topDot
-        length="65"
-        color="white"
-        style={{ transform: 'rotate(180deg)', marginTop: '7px' }}
-      />
+      <StyledLine dashed right="11px" topDot length="65" color="white" />
       <Title>SPONSORS</Title>
       {Object.entries(sponsors).map(([size, sponsorGroups]) => (
-        <SponsorContainer size={size} key={size}>
-          {sponsorGroups.map(({ image, url }, index) => (
-            <Sponsor href={url} key={index}>
+        <>
+          <SponsorContainer
+            size={size}
+            key={size}
+            style={{ paddingBottom: size === 'silver' ? '1em' : '2em' }}
+          >
+            {sponsorGroups.map(({ image, url }, index) => (
+              <Sponsor href={url} key={index}>
+                <Zoom>
+                  <Fade>
+                    <img src={image} alt="sponsor" />
+                  </Fade>
+                </Zoom>
+              </Sponsor>
+            ))}
+          </SponsorContainer>
+          <SponsorContainer
+            size="silver"
+            style={{
+              paddingLeft: '50%',
+              display: size === 'silver' ? 'grid' : 'none',
+              marginTop: '0px',
+            }}
+          >
+            <Sponsor style={{ transform: 'translateX(-50%)' }}>
               <Zoom>
                 <Fade>
-                  <img src={image} alt="sponsor" />
+                  <img src={kulap} alt="sponsor" />
                 </Fade>
               </Zoom>
             </Sponsor>
-          ))}
-        </SponsorContainer>
+          </SponsorContainer>
+        </>
       ))}
     </Container>
   </All>

@@ -4,14 +4,24 @@ import { SocialIcon } from 'react-social-icons'
 
 const SocialBar = styled.div`
   position: fixed;
+  display: flex;
+  flex-direction: column;
   bottom: 20px;
   left: 20px;
   z-index: 99;
-  a {
-    margin-bottom: 5px;
+
+  .social-svg {
     background: white;
-    border-radius: 50%;
   }
+
+  a {
+    margin-bottom: 0.5em;
+    transition: all 300ms;
+    :hover {
+      filter: brightness(1.1);
+    }
+  }
+
   @media (max-width: 650px) {
     display: none;
   }
@@ -21,8 +31,8 @@ export default () => {
   return (
     <SocialBar>
       <SocialIcon url="https://facebook.com/barcampbangkhen" />
-      <br />
       <SocialIcon url="https://twitter.com/barcampbangkhen" />
+      <SocialIcon url="mailto:info@barcampbangkhen.org" />
     </SocialBar>
   )
 }

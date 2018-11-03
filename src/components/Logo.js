@@ -7,24 +7,22 @@ import PrimaryBtn from './PrimaryBtn'
 import Loader from 'react-loaders'
 
 const RegisterButton = styled(PrimaryBtn)`
+  :not(:disabled) {
+    animation: Pulse 1s infinite ease-out;
+
+    @keyframes Pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  }
   margin: auto;
   margin-top: 1em;
   padding: 10px 20px;
-  animation: Pulse 1s infinite ease-out;
-
-  :hover {
-    animation: none;
-  }
-
-  @keyframes Pulse {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-  }
 `
 
 const Container = styled.div`
@@ -40,6 +38,11 @@ const Container = styled.div`
 const LogoComponent = styled.img`
   width: 100%;
   max-width: 240px;
+`
+
+const PulseLoader = styled(Loader)`
+  transform: scale(1.2);
+  padding: 170px 0;
 `
 
 const LogoContainer = styled.div`
@@ -81,11 +84,6 @@ const DetailContainer = styled.div`
   align-items: center;
 `
 
-const PulseLoader = styled(Loader)`
-  transform: scale(1.2);
-  padding: 185px 0;
-`
-
 const DueDate = styled.h2`
   margin: 0 auto;
   font-size: 26px;
@@ -117,7 +115,7 @@ export default class extends React.PureComponent {
               <LogoComponent style={{ marginTop: '0.5em' }} src={Barcamp} />
             </LogoContainer>
           )}
-          <DueDate>27 November 2018</DueDate>
+          <DueDate>25 November 2018</DueDate>
           <a
             href="https://goo.gl/Shs6VY"
             rel="noopener noreferrer"

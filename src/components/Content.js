@@ -57,7 +57,7 @@ const Content = props => (
     <STitle>
       <Fade>{props.title}</Fade>
     </STitle>
-    <Fade bottom>
+    <Fade>
       <SContent>{props.children}</SContent>
     </Fade>
   </Section>

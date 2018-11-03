@@ -7,7 +7,7 @@ const Map = styled.iframe`
   width: 100%;
   height: 360px;
   border: none;
-  margin: 2em auto;
+  margin: 1em auto;
 `
 
 const Title = styled.h1`
@@ -15,15 +15,19 @@ const Title = styled.h1`
   margin: 60px 0 0 150px;
 `
 
+const StyledLine = styled(Line)`
+  transform: rotate(-60deg);
+`
+
 export default () => (
   <div>
-    <Line rotate="r" length="120" top="85" right="48" topDot bottomDot />
+    <StyledLine length="116" top="72" right="54" topDot bottomDot />
     <Zoom>
       <Title>LOCATION</Title>
     </Zoom>
     <Zoom>
       <Map
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.8786118931484!2d100.56634103564576!3d13.84632421925175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ce74be3ff67%3A0x740d29058aa90dcc!2sDepartment+of+Computer+Engineering%2C+Kasetsart+University!5e0!3m2!1sen!2sth!4v1539427242601"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d516.4958529942247!2d100.5696961920409!3d13.846490263227853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ce0ba6b4eb7%3A0x2a0f9538c39c6511!2sIUP+International+Building+17!5e0!3m2!1sen!2sth!4v1540120842495"
         frameborder="0"
       />
     </Zoom>
