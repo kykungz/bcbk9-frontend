@@ -33,6 +33,11 @@ const PopContainer = styled.span`
   color: white;
   border-radius: 0.25em;
 `
+const SocialList = [
+  ['https://facebook.com/barcampbangkhen', 'facebook.com/barcampbangkhen'],
+  ['https://twitter.com/barcampbangkhen', 'twitter.com/barcampbangkhen'],
+  ['info@barcampbangkhen.org', 'mailto:info@barcampbangkhen.org'],
+]
 const body = url => <PopContainer>{url}</PopContainer>
 export default class extends Component {
   state = {
@@ -43,46 +48,25 @@ export default class extends Component {
     isOpen[index] = value
     this.setState({ isOpen })
   }
+
   render = () => {
     return (
       <SocialBar>
-        <Popover
-          isOpen={this.state.isOpen[0]}
-          body={body('facebook.com/barcampbangkhen')}
-          preferPlace="end"
-          enterExitTransitionDurationMs={300}
-        >
-          <SocialIcon
-            onMouseOver={this.onActive(0, true)}
-            onMouseOut={this.onActive(0, false)}
-            url="https://facebook.com/barcampbangkhen"
-          />
-        </Popover>
-        <Popover
-          isOpen={this.state.isOpen[1]}
-          body={body('twitter.com/barcampbangkhen')}
-          preferPlace="end"
-          enterExitTransitionDurationMs={300}
-        >
-          <SocialIcon
-            onMouseOver={this.onActive(1, true)}
-            onMouseOut={this.onActive(1, false)}
-            url="https://twitter.com/barcampbangkhen"
-          />
-        </Popover>
-        <Popover
-          isOpen={this.state.isOpen[2]}
-          body={body('info@barcampbangkhen.org')}
-          preferPlace="end"
-          enterExitTransitionDurationMs={300}
-        >
-          <SocialIcon
-            onMouseOver={this.onActive(2, true)}
-            onMouseOut={this.onActive(2, false)}
-            url="mailto:info@barcampbangkhen.org"
+        {SocialList.map(([url, name], index) => (
+          <Popover
+            isOpen={this.state.isOpen[index]}
+            body={body(name)}
+            preferPlace="end"
             enterExitTransitionDurationMs={300}
-          />
-        </Popover>
+            key={index}
+          >
+            <SocialIcon
+              onMouseOver={this.onActive(index, true)}
+              onMouseOut={this.onActive(index, false)}
+              url={url}
+            />
+          </Popover>
+        ))}
       </SocialBar>
     )
   }
