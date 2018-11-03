@@ -59,13 +59,13 @@ export default class extends Component {
         </Popover>
         <Popover
           isOpen={this.state.isOpen[1]}
-          body={body('https://twitter.com/barcampbangkhen')}
+          body={body('twitter.com/barcampbangkhen')}
           preferPlace="end"
         >
           <SocialIcon
             onMouseOver={this.onActive(1, true)}
             onMouseOut={this.onActive(1, false)}
-            url="twitter.com/barcampbangkhen"
+            url="https://twitter.com/barcampbangkhen"
           />
         </Popover>
         <Popover
