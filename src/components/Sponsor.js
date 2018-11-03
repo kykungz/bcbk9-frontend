@@ -75,6 +75,7 @@ const sponsors = {
 
 const All = styled.div`
   background: salmon;
+  overflow: hidden;
 `
 
 const Container = styled.div`
