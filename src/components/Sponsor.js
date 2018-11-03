@@ -169,7 +169,10 @@ export default () => (
               marginTop: '0px',
             }}
           >
-            <Sponsor style={{ transform: 'translateX(-50%)' }}>
+            <Sponsor
+              href="https://www.kulap.io/"
+              style={{ transform: 'translateX(-50%)' }}
+            >
               <Zoom>
                 <Fade>
                   <img src={kulap} alt="sponsor" />
