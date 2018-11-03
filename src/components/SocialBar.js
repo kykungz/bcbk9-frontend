@@ -50,6 +50,7 @@ export default class extends Component {
           isOpen={this.state.isOpen[0]}
           body={body('facebook.com/barcampbangkhen')}
           preferPlace="end"
+          enterExitTransitionDurationMs={300}
         >
           <SocialIcon
             onMouseOver={this.onActive(0, true)}
@@ -61,6 +62,7 @@ export default class extends Component {
           isOpen={this.state.isOpen[1]}
           body={body('twitter.com/barcampbangkhen')}
           preferPlace="end"
+          enterExitTransitionDurationMs={300}
         >
           <SocialIcon
             onMouseOver={this.onActive(1, true)}
@@ -72,11 +74,13 @@ export default class extends Component {
           isOpen={this.state.isOpen[2]}
           body={body('info@barcampbangkhen.org')}
           preferPlace="end"
+          enterExitTransitionDurationMs={300}
         >
           <SocialIcon
             onMouseOver={this.onActive(2, true)}
             onMouseOut={this.onActive(2, false)}
             url="mailto:info@barcampbangkhen.org"
+            enterExitTransitionDurationMs={300}
           />
         </Popover>
       </SocialBar>
