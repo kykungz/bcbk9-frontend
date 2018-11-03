@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { SocialIcon } from 'react-social-icons'
+import Popover from 'react-popover'
 
 const SocialBar = styled.div`
   position: fixed;
@@ -26,13 +27,37 @@ const SocialBar = styled.div`
     display: none;
   }
 `
-
+const PopContainer = styled.span`
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+  border-radius: 0.25em;
+`
+const body = url => <PopContainer>{url}</PopContainer>
 export default () => {
   return (
     <SocialBar>
-      <SocialIcon url="https://facebook.com/barcampbangkhen" />
-      <SocialIcon url="https://twitter.com/barcampbangkhen" />
-      <SocialIcon url="mailto:info@barcampbangkhen.org" />
+      <Popover
+        isOpen={true}
+        body={body('facebook.com/barcampbangkhen')}
+        preferPlace="end"
+      >
+        <SocialIcon url="https://facebook.com/barcampbangkhen" />
+      </Popover>
+      <Popover
+        isOpen={true}
+        body={body('https://twitter.com/barcampbangkhen')}
+        preferPlace="end"
+      >
+        <SocialIcon url="twitter.com/barcampbangkhen" />
+      </Popover>
+      <Popover
+        isOpen={true}
+        body={body('info@barcampbangkhen.org')}
+        preferPlace="end"
+      >
+        <SocialIcon url="mailto:info@barcampbangkhen.org" />
+      </Popover>
     </SocialBar>
   )
 }
