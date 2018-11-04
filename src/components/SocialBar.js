@@ -36,7 +36,7 @@ const PopContainer = styled.span`
 const SocialList = [
   ['https://facebook.com/barcampbangkhen', 'facebook.com/barcampbangkhen'],
   ['https://twitter.com/barcampbangkhen', 'twitter.com/barcampbangkhen'],
-  ['info@barcampbangkhen.org', 'mailto:info@barcampbangkhen.org'],
+  ['mailto:info@barcampbangkhen.org', 'info@barcampbangkhen.org'],
 ]
 const body = url => <PopContainer>{url}</PopContainer>
 export default class extends Component {
