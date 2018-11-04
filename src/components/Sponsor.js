@@ -15,6 +15,8 @@ import sellsuki from '../assets/silver/sellsuki.png'
 import wisesight from '../assets/silver/wisesight.svg'
 import yannix from '../assets/silver/yannix.svg'
 
+import kulap from '../assets/silver/kulap.svg'
+
 //gold
 import metromerce from '../assets/gold/metromerce.svg'
 import taskworld from '../assets/gold/taskworld.svg'
@@ -73,6 +75,7 @@ const sponsors = {
 
 const All = styled.div`
   background: salmon;
+  overflow: hidden;
 `
 
 const Container = styled.div`
@@ -147,17 +150,42 @@ export default () => (
       <StyledLine dashed right="11px" topDot length="65" color="white" />
       <Title>SPONSORS</Title>
       {Object.keys(sponsors).map(size => (
-        <SponsorContainer size={size} key={size}>
-          {sponsors[size].map((sponsor, index) => (
-            <Sponsor href={sponsor.url} key={index}>
+        <div key={size}>
+          <SponsorContainer
+            size={size}
+            key={size}
+            style={{ paddingBottom: size === 'silver' ? '1em' : '2em' }}
+          >
+            {sponsors[size].map((sponsor, index) => (
+              <Sponsor href={sponsor.url} key={index}>
+                <Zoom>
+                  <Fade>
+                    <img src={sponsor.image} alt="sponsor" />
+                  </Fade>
+                </Zoom>
+              </Sponsor>
+            ))}
+          </SponsorContainer>
+          <SponsorContainer
+            size="silver"
+            style={{
+              display: size === 'silver' ? 'flex' : 'none',
+              justifyContent: 'center',
+              marginTop: '0px',
+              padding: '0em 0.5em 0em 0.5em',
+              marginBottom: '2em',
+              boxSizing: 'border-box',
+            }}
+          >
+            <Sponsor href="https://www.kulap.io/" style={{ width: '50%' }}>
               <Zoom>
                 <Fade>
-                  <img src={sponsor.image} alt="sponsor" />
+                  <img src={kulap} alt="sponsor" />
                 </Fade>
               </Zoom>
             </Sponsor>
-          ))}
-        </SponsorContainer>
+          </SponsorContainer>
+        </div>
       ))}
     </Container>
   </All>
