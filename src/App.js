@@ -19,10 +19,6 @@ class App extends Component {
   componentDidMount = () => {
     window.addEventListener('scroll', this.alterBackground)
     this.alterBackground()
-    // if (window.scrollY >= SPEED * 100 - OFFSET) {
-    //   const opacity = (1 - OFFSET / (SPEED * 100)).toFixed(2)
-    //   document.body.style.setProperty('--opacity', 1 - opacity)
-    // }
   }
 
   render() {

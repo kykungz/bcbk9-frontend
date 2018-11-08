@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.scss'
 import 'loaders.css/src/animations/ball-pulse.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
@@ -8,6 +7,11 @@ import { injectGlobal } from 'styled-components'
 import background from './assets/background.png'
 
 injectGlobal`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
   body:before {
     content: "";
     opacity: var(--opacity, 1);
