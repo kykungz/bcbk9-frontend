@@ -5,6 +5,7 @@ import store from './store'
 import SessionTabs from './SessionTabs'
 import SessionTime from './SessionTime'
 import logo from '../../assets/Logo150px.png'
+import Loading from './Loading'
 import './sessions.css'
 
 const Container = styled.div`
@@ -14,7 +15,6 @@ const Container = styled.div`
   padding-bottom: 0;
   margin-top: 3em;
   max-width: 960px;
-  background: rgba(201, 201, 201, 0.1);
   border-radius: 25px;
   @media (max-width: 650px) {
     padding: 0;
@@ -29,30 +29,25 @@ export class Sessions extends Component {
   }
 
   render() {
+    if (this.state.store.loading.get()) return <Loading />
     return (
       <Container>
-        {this.state.store.loading.get() ? (
-          <h1>LOADING...</h1>
-        ) : (
-          <div>
-            <div className="session-header">
-              <img
-                src={logo}
-                style={{ width: '120px', height: '100%' }}
-                alt="logo"
-              />
-              <h1>SESSIONS</h1>
+        <>
+          <div className="session-header">
+            <div>
+              <img src={logo} style={{ width: '120px' }} alt="logo" />
             </div>
-            <div className="session-body">
-              <div className="left">
-                <SessionTime store={this.state.store} />
-              </div>
-              <div className="right">
-                <SessionTabs store={this.state.store} />
-              </div>
+            <h1>SESSIONS</h1>
+          </div>
+          <div className="session-body">
+            <div className="left">
+              <SessionTime store={this.state.store} />
+            </div>
+            <div className="right">
+              <SessionTabs store={this.state.store} />
             </div>
           </div>
-        )}
+        </>
       </Container>
     )
   }

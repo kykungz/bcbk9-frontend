@@ -5,6 +5,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import Hamburger from '../assets/hamburger.svg'
 import FacebookIcon from '../assets/facebookIcon.png'
 import TwitterIcon from '../assets/twitterIcon.svg'
+import './navbar.css'
 
 const Container = styled.div`
   position: fixed;
@@ -54,19 +55,6 @@ const MenuName = styled.span`
   @media (max-width: 650px) {
     padding-top: 20px;
     box-sizing: border-box;
-  }
-`
-const A = styled.a`
-  color: #ab0057;
-  text-decoration: none;
-  &:hover {
-    color: #ab0057;
-  }
-  @media (max-width: 650px) {
-    color: white;
-    &:hover {
-      color: white;
-    }
   }
 `
 
@@ -151,9 +139,9 @@ export default class extends Component {
         onClick={() => this.onClickBurger()}
       >
         <MenuName>
-          <A>
-            <RouterLink to={url}>{name.toUpperCase()}</RouterLink>
-          </A>
+          <RouterLink to={url} className="NavLink">
+            {name.toUpperCase()}
+          </RouterLink>
         </MenuName>
       </Menu>
     )

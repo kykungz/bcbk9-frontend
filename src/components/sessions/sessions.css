@@ -7,8 +7,6 @@
   display: flex;
   width: 100%;
   margin: auto;
-  padding: 20px;
-  min-height: 100px;
 }
 
 .session-body .left {
@@ -28,8 +26,11 @@
   font-size: 18px;
 }
 
-.session-body .left div .active {
+.active span {
   font-weight: bold;
+  border: 1px solid rgba(147, 106, 212, 0.8);
+  border-radius: 5px;
+  padding: 0 10px;
 }
 
 .session-body .right {
@@ -48,25 +49,34 @@
   border-radius: 25px;
   min-height: 100px;
   background-image: linear-gradient(to right, #f38b7b, #983a7a);
+  position: relative;
 }
 
 .sessiontab .detail {
   padding: 10px;
-  width: calc(80% - 20px);
+  width: calc(100% - 110px);
   overflow: hidden;
 }
 
 .sessiontab .room {
-  width: 20%;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 100px;
+  height: 75px;
   background: white;
   border-radius: 50%;
   text-align: center;
-  font-size: 1.5rem;
-  padding-top: 15px;
+  font-size: 2rem;
+  padding-top: 25px;
   color: rgb(160, 68, 121);
 }
 
 @media (max-width: 768px) {
+  .session-header {
+    justify-content: center;
+  }
+
   .session-body {
     display: block;
     width: 100%;
@@ -79,5 +89,10 @@
 
   .session-body .right {
     width: 100%;
+  }
+
+  .session-body .left div {
+    margin: 10px 0;
+    font-size: 12px;
   }
 }

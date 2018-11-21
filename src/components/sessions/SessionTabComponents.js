@@ -5,7 +5,7 @@ export class SessionTabComponents extends Component {
     return (
       <div className="sessiontab">
         <div className="detail">
-          <div>{this.props.item.name}</div>
+          <div style={{ fontSize: '24px' }}>{this.props.item.name}</div>
           <div>by {this.props.item.speaker}</div>
         </div>
         <div className="room">{this.props.item.room}</div>

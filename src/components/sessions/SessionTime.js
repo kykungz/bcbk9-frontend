@@ -71,11 +71,11 @@ export class SessionTime extends Component {
           onClick={() => current_selected.set(item.value)}
           className={`${current_selected.get() === item.value ? 'active' : ''}`}
         >
-          {item.name}
+          <span>{item.name}</span>
         </div>
       )
     })
-    return <div>{time_comp}</div>
+    return <>{time_comp}</>
   }
 }
 
