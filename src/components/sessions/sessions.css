@@ -1,0 +1,78 @@
+.session-header {
+  display: flex;
+  font-size: 2rem;
+}
+
+.session-body {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  min-height: 100px;
+}
+
+.session-body .left {
+  text-align: right;
+  padding: 0 10px;
+  width: 30%;
+  border-right: 5px solid rgb(161,35,89);
+  height: 100%;
+}
+
+.session-body .left h1 {
+    color: rgb(161,35,89);
+}
+
+.session-body .left div {
+    margin: 10px 0;
+}
+
+.session-body .right {
+  width: 70%;
+  color: white;
+}
+
+.sessiontab-wrapper {
+  margin: 20px;
+}
+
+.sessiontab {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  border-radius: 25px;
+  height: 100px;
+  background-image: linear-gradient(to right, #f38b7b, #983a7a);
+}
+
+.sessiontab .detail {
+  padding: 10px;
+  width: calc(80% - 20px);
+  overflow: hidden;
+}
+
+.sessiontab .room {
+  width: 20%;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 15px;
+  color: rgb(160,68,121);
+}
+
+@media (max-width: 768px) {
+  .session-body {
+    display: block;
+    width: 100%;
+  }
+
+  .session-body .left {
+    width: 100%;
+    display: none;
+  }
+
+  .session-body .right {
+    width: 100%;
+  }
+}

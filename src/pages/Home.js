@@ -1,5 +1,4 @@
 import React from 'react'
-// import SessionTabs from '../components/SessionTabs'
 import NavBar from '../components/NavBar'
 import Location from '../components/Location'
 import Content from '../components/Content'
