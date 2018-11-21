@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -19,22 +20,43 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+  <link href="https://fonts.googleapis.com/css?family=Prompt:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic:300,400,700" rel="stylesheet">
 
-    <meta name="keywords" content="barcamp, bcbk9, barcampbangkhen, บาร์แคมป์"  />
-    <meta property="og:title" content="BarCamp Bangkhen 9"/>
-    <meta property="og:description" content="Experience a new way of conference and be a part of ideas sharing."/>
-    <!-- <meta property="og:image" content="%PUBLIC_URL%/images/og-image.jpg"/> -->
-    <meta property="tw:description" content="Experience a new way of conference and be a part of ideas sharing."/>
-    <meta name="description" content="Experience a new way of conference and be a part of ideas sharing.">
-    
-    <title>Barcamp Bangkhen 9</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
+  <title>Barcamp Bangkhen 9</title>
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <meta name="keywords" content="barcamp, bcbk9, barcampbangkhen, บาร์แคมป์" />
+  <meta name="description" content="Experience a new way of conference and be a part of ideas sharing.">
+  <meta property="og:title" content="BarCamp Bangkhen 9" />
+  <meta property="og:description" content="Experience a new way of conference and be a part of ideas sharing." />
+  <meta property="og:image" content="%PUBLIC_URL%/preview.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://barcampbangkhen.org" />
+  <meta property="tw:description" content="Experience a new way of conference and be a part of ideas sharing." />
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TG29MHL');</script>
+  <!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG29MHL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -44,5 +66,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>
