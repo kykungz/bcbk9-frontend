@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 import store from './store'
 import SessionTabs from './SessionTabs'
 import SessionTime from './SessionTime'
+import SessionMobileTime from './SessionMobileTime'
 import logo from '../../assets/Logo150px.png'
 import Loading from './Loading'
 import './sessions.css'
@@ -42,6 +43,9 @@ export class Sessions extends Component {
           <div className="session-body">
             <div className="left">
               <SessionTime store={this.state.store} />
+            </div>
+            <div className="left-mobile">
+              <SessionMobileTime store={this.state.store} />
             </div>
             <div className="right">
               <SessionTabs store={this.state.store} />

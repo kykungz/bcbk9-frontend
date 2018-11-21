@@ -72,6 +72,11 @@
   color: rgb(160, 68, 121);
 }
 
+.session-body .left-mobile {
+  width: 100%;
+  display: none;
+}
+
 @media (max-width: 768px) {
   .session-header {
     justify-content: center;
@@ -85,6 +90,12 @@
   .session-body .left {
     width: 100%;
     display: none;
+  }
+
+  .session-body .left-mobile {
+    width: 90%;
+    display: block;
+    margin: auto;
   }
 
   .session-body .right {

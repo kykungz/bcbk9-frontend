@@ -18,6 +18,7 @@
     "prettier": "^1.14.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-dropdown": "^1.6.2",
     "react-loaders": "^3.0.1",
     "react-popover": "^0.5.10",
     "react-reveal": "^1.2.2",
