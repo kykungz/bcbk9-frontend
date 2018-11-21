@@ -21,6 +21,8 @@ export default class {
         })
         console.log(this.sessions)
         this.loading.set(false)
+        // TODO set this to current time later
+        this.current_selected.set('10.40')
       })
       .catch(err => {
         console.log(err)
