@@ -15,16 +15,21 @@
   text-align: right;
   padding: 0 10px;
   width: 30%;
-  border-right: 5px solid rgb(161,35,89);
+  border-right: 5px solid rgb(161, 35, 89);
   height: 100%;
 }
 
 .session-body .left h1 {
-    color: rgb(161,35,89);
+  color: rgb(161, 35, 89);
 }
 
 .session-body .left div {
-    margin: 10px 0;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.session-body .left div .active {
+  font-weight: bold;
 }
 
 .session-body .right {
@@ -41,7 +46,7 @@
   flex-wrap: wrap;
   margin: 20px;
   border-radius: 25px;
-  height: 100px;
+  min-height: 100px;
   background-image: linear-gradient(to right, #f38b7b, #983a7a);
 }
 
@@ -58,7 +63,7 @@
   text-align: center;
   font-size: 1.5rem;
   padding-top: 15px;
-  color: rgb(160,68,121);
+  color: rgb(160, 68, 121);
 }
 
 @media (max-width: 768px) {

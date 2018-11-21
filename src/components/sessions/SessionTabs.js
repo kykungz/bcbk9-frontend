@@ -1,29 +1,32 @@
 import React, { Component } from 'react'
+import { observer } from 'mobx-react'
 import SessionTabComponents from './SessionTabComponents'
-const sessionList = [
-  {
-    name: 'ICEoooooooooooooooooooooooooooo',
-    speaker: 'ice',
-    number: '17201',
-  },
-  { name: 'ICEpppppppppppppppppppppp', speaker: 'ice', number: '17201' },
-  {
-    name: 'ICEppppppppppppppppppppppppppppppppppppppppppppp',
-    speaker: 'ice',
-    number: '17201',
-  },
-  { name: 'IpppppppppppCE', speaker: 'ice', number: '17201' },
-  { name: 'IpppppppppppppppppCE', speaker: 'ice', number: '17201' },
-  { name: 'IlllllllllllllllCE', speaker: 'ice', number: '17201' },
-  { name: 'ICE', speaker: 'ice', number: '17201' },
-]
+
 export class SessionTabs extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      sessionList: [],
+    }
+  }
+
+  componentDidMount() {
+    this.props.store.session_by_current_selected.observe(change => {
+      this.setState({ sessionList: change.newValue })
+    })
+  }
+
   render() {
-    const sessiontabs = sessionList.map((item, index) => (
-      <SessionTabComponents item={item} key={`${item.name + index}`} />
-    ))
+    console.log(this.state.sessionList)
+    const sessiontabs = this.state.sessionList ? (
+      this.state.sessionList.map((item, index) => (
+        <SessionTabComponents item={item} key={`${item.name + index}`} />
+      ))
+    ) : (
+      <div />
+    )
     return <div className="sessiontab-wrapper">{sessiontabs}</div>
   }
 }
 
-export default SessionTabs
+export default observer(SessionTabs)
