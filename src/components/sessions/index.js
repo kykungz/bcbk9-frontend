@@ -17,6 +17,7 @@ const Container = styled.div`
   margin-top: 3em;
   max-width: 960px;
   border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
   @media (max-width: 650px) {
     padding: 0;
   }

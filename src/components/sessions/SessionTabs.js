@@ -17,7 +17,6 @@ export class SessionTabs extends Component {
   }
 
   render() {
-    console.log(this.state.sessionList)
     const sessiontabs = this.state.sessionList ? (
       this.state.sessionList.map((item, index) => (
         <SessionTabComponents item={item} key={`${item.name + index}`} />

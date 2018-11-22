@@ -4,7 +4,6 @@ import axios from 'axios'
 
 export default class {
   constructor() {
-    console.log('store is created')
     this.loading.set(true)
     const sessions = this.sessions
     axios
@@ -19,10 +18,24 @@ export default class {
           }
           sessions[key].push(item)
         })
-        console.log(this.sessions)
         this.loading.set(false)
-        // TODO set this to current time later
-        this.current_selected.set('10.40')
+        const times = [
+          '10.40',
+          '11.10',
+          '11.40',
+          '13.00',
+          '13.30',
+          '14.00',
+          '14.30',
+          '15.35',
+          '16.05',
+          '16.35',
+        ]
+        const current_session = times.filter(
+          item => parseInt(moment().format('H.mm')) >= parseInt(item),
+        )
+
+        this.current_selected.set(current_session[current_session.length - 1])
       })
       .catch(err => {
         console.log(err)
