@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 
-const times = [
+export const times = [
   {
     name: 'MORNING',
     value: false,
@@ -60,11 +60,19 @@ const times = [
   },
 ]
 
-export class SessionTime extends Component {
+class SessionTime extends Component {
   render() {
     const current_selected = this.props.store.current_selected
     const time_comp = times.map((item, index) => {
-      if (!item.value) return <h1 key={`${item.name + index}`}>{item.name}</h1>
+      if (!item.value)
+        return (
+          <div className="time-head">
+            <h1 key={`${item.name + index}`}>{item.name}</h1>
+            <div>
+              <div />
+            </div>
+          </div>
+        )
       return (
         <div
           key={`${item.name + index}`}
@@ -77,8 +85,12 @@ export class SessionTime extends Component {
         </div>
       )
     })
-    return <>{time_comp}</>
+    return (
+      <>
+        {time_comp}
+        <div className="line-time" />
+      </>
+    )
   }
 }
-
 export default observer(SessionTime)
