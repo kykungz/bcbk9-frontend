@@ -5,8 +5,24 @@ export class SessionTabComponents extends Component {
     return (
       <div className="sessiontab">
         <div className="detail">
-          <div style={{ fontSize: '24px' }}>{this.props.item.name}</div>
-          <div>by {this.props.item.speaker}</div>
+          {!this.props.item.name ? (
+            <div
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '40%',
+                transform: 'translate(-50%,-50%)',
+                fontSize: '24px',
+              }}
+            >
+              unavailable session
+            </div>
+          ) : (
+            <div>
+              <div style={{ fontSize: '24px' }}>{this.props.item.name}</div>
+              <div>by {this.props.item.speaker}</div>
+            </div>
+          )}
         </div>
         <div className="room">{this.props.item.room}</div>
       </div>

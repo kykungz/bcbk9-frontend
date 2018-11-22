@@ -22,7 +22,18 @@ export class SessionTabs extends Component {
         <SessionTabComponents item={item} key={`${item.name + index}`} />
       ))
     ) : (
-      <div />
+      <div
+        style={{
+          color: 'white',
+          margin: '35px 0',
+          textAlign: 'center',
+          backgroundImage: 'linear-gradient(to right, #f38b7b, #983a7a)',
+          borderRadius: '10px',
+          padding: '10px',
+        }}
+      >
+        <b>this current schedule is unavailable.</b>
+      </div>
     )
     return <div className="sessiontab-wrapper">{sessiontabs}</div>
   }
