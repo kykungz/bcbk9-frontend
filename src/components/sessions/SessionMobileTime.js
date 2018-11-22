@@ -57,7 +57,9 @@ class SessionMobileTime extends Component {
   }
 
   render() {
-    const defaultOption = times[0]
+    const defaultOption = times.filter(
+      item => this.props.store.current_selected.get() === item.value,
+    )[0]
     return (
       <div>
         <Dropdown
