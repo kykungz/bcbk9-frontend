@@ -32,8 +32,10 @@ export default class {
           '16.35',
         ]
         const current_session = times.filter(
-          item => parseInt(moment().format('H.mm')) >= parseInt(item),
+          item => parseFloat(moment().format('H.mm')) > parseFloat(item),
         )
+
+        console.log(current_session)
 
         this.current_selected.set(current_session[current_session.length - 1])
       })
