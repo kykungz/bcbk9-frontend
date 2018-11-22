@@ -85,6 +85,10 @@
   display: none;
 }
 
+.sessiontab .detail .header {
+  font-size: 24px;
+}
+
 @media (max-width: 768px) {
   .session-header {
     justify-content: center;
@@ -118,5 +122,9 @@
 
   .sessiontab-wrapper {
     overflow-y: unset;
+  }
+
+  .sessiontab .detail .header {
+    font-size: 18px;
   }
 }

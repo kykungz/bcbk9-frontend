@@ -19,7 +19,7 @@ export class SessionTabComponents extends Component {
             </div>
           ) : (
             <div>
-              <div style={{ fontSize: '24px' }}>{this.props.item.name}</div>
+              <div className="header">{this.props.item.name}</div>
               <div>by {this.props.item.speaker}</div>
             </div>
           )}
