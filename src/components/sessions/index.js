@@ -6,6 +6,7 @@ import SessionTabs from './SessionTabs'
 import SessionTime from './SessionTime'
 import SessionMobileTime from './SessionMobileTime'
 import logo from '../../assets/Logo150px.png'
+import logoName from '../../assets/logo-barcamp.svg'
 import Loading from './Loading'
 import './sessions.css'
 
@@ -14,7 +15,7 @@ const Container = styled.div`
   margin: 0 auto;
   margin-bottom: 0;
   padding-bottom: 0;
-  margin-top: 3em;
+  margin-top: 6em;
   max-width: 960px;
   border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -37,7 +38,8 @@ export class Sessions extends Component {
         <>
           <div className="session-header">
             <div>
-              <img src={logo} style={{ width: '120px' }} alt="logo" />
+              <img src={logo} alt="logo" />
+              <img src={logoName} />
             </div>
             <h1>SESSIONS</h1>
           </div>

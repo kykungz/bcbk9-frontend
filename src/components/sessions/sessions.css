@@ -1,6 +1,30 @@
 .session-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-column-gap: 0.5em;
+  padding: 0px 2em;
+  box-sizing: border-box;
   font-size: 2rem;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.session-header div:first-child {
+  display: grid;
+  grid-row-gap: 0.2em;
+  padding-bottom: 0.6em;
+}
+
+.session-header div:first-child img {
+  width: 100px;
+}
+
+.session-header h1 {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
 }
 
 .session-body {
