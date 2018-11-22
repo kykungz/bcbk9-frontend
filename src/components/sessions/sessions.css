@@ -164,6 +164,7 @@
   .session-body {
     display: block;
     width: 100%;
+    padding: 0px;
   }
 
   .session-body .left {
@@ -188,6 +189,7 @@
 
   .sessiontab-wrapper {
     overflow-y: unset;
+    margin: 0px;
   }
 
   .sessiontab .detail .header {
