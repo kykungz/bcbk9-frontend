@@ -5,6 +5,8 @@ import Logo from '../assets/logo.svg'
 import Barcamp from '../assets/logo-barcamp.svg'
 import PrimaryBtn from './PrimaryBtn'
 import Loader from 'react-loaders'
+import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 const RegisterButton = styled(PrimaryBtn)`
   :not(:disabled) {
@@ -104,6 +106,7 @@ export default class extends React.PureComponent {
     }, 2000)
   }
   render() {
+    const eventDate = '25112018'
     return (
       <Container>
         <DetailContainer>
@@ -116,13 +119,26 @@ export default class extends React.PureComponent {
             </LogoContainer>
           )}
           <DueDate>25 November 2018</DueDate>
-          <a
-            href="https://goo.gl/Shs6VY"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <RegisterButton>register now</RegisterButton>
-          </a>
+          {moment()
+            .format('DMY')
+            .localeCompare(eventDate) >= 0 ? (
+            <Link to="/sessions">
+              <RegisterButton>
+                view sessions
+                <sup style={{ margin: '10px', color: 'rgb(244,177,161)' }}>
+                  new
+                </sup>
+              </RegisterButton>
+            </Link>
+          ) : (
+            <a
+              href="https://goo.gl/Shs6VY"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <RegisterButton>register now</RegisterButton>
+            </a>
+          )}
         </DetailContainer>
       </Container>
     )
