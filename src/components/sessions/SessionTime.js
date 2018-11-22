@@ -69,7 +69,9 @@ export class SessionTime extends Component {
         <div
           key={`${item.name + index}`}
           onClick={() => current_selected.set(item.value)}
-          className={`${current_selected.get() === item.value ? 'active' : ''}`}
+          className={`${
+            current_selected.get() === item.value ? 'time active' : 'time'
+          }`}
         >
           <span>{item.name}</span>
         </div>
