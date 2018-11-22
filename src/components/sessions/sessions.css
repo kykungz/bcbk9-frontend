@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-size: 2rem;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
 }
 .session-header div:first-child {
   display: grid;
@@ -31,6 +31,10 @@
   display: grid;
   grid-template-columns: 30% 70%;
   margin: auto;
+  position: relative;
+  margin-bottom: 2em;
+  padding: 1em;
+  box-sizing: border-box;
 }
 
 .session-body .left {
@@ -99,6 +103,16 @@
   margin: 0 20px;
   overflow-y: scroll;
   height: 720px;
+}
+
+.sessiontab-wrapper::-webkit-scrollbar {
+  width: 0.5em;
+}
+.sessiontab-wrapper::-webkit-scrollbar-track {
+}
+.sessiontab-wrapper::-webkit-scrollbar-thumb {
+  background-color: #f77976;
+  border-radius: 0.25em;
 }
 
 .sessiontab {
