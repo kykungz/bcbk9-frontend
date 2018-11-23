@@ -16,7 +16,7 @@ const Line = styled.div`
   right: 15px;
   height: ${props => props.length};
   border-right: 5px ${props => (props.dashed ? 'dashed' : 'solid')};
-  ${props => (props.color ? props.color : '#a31d58')};
+  color: ${props => (props.color ? props.color : '#a31d58')};
 `
 
 const LineContainer = styled.div`
