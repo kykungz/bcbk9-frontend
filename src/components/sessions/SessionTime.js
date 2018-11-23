@@ -7,16 +7,16 @@ export const times = [
     value: false,
   },
   {
-    name: '10.40 - 11.05',
-    value: '10.40',
+    name: '10.30 - 10:55',
+    value: '10.30',
   },
   {
-    name: '11.10 - 11.35',
-    value: '11.10',
+    name: '11.00 - 11.25',
+    value: '11.00',
   },
   {
-    name: '11.40 - 12.05',
-    value: '11.40',
+    name: '11.30 - 11:55',
+    value: '11.30',
   },
   {
     name: 'LUNCH',
@@ -43,16 +43,16 @@ export const times = [
     value: false,
   },
   {
-    name: '15.35 - 16.00',
-    value: '15.35',
+    name: '15.30 - 15:55',
+    value: '15.30',
   },
   {
-    name: '16.05 - 16.30',
-    value: '16.05',
+    name: '16.00 - 16.25',
+    value: '16.00',
   },
   {
-    name: '16.35 – 17.00',
-    value: '16.35',
+    name: '16.30 – 16:55',
+    value: '16.30',
   },
   {
     name: 'DONE',
