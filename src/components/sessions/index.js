@@ -39,7 +39,7 @@ export class Sessions extends Component {
           <div className="session-header">
             <div>
               <img src={logo} alt="logo" />
-              <img src={logoName} />
+              <img src={logoName} alt="logo" />
             </div>
             <h1>SESSIONS</h1>
           </div>
