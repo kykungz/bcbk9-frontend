@@ -1,0 +1,17 @@
+.NavLink {
+  color: #ab0057;
+  text-decoration: none;
+}
+
+.NavLink:hover {
+  color: #ab0057;
+}
+
+@media (max-width: 650px) {
+  .NavLink {
+    color: white;
+  }
+  .NavLink:hover {
+    color: white;
+  }
+}

@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-scroll'
+import { Link as RouterLink } from 'react-router-dom'
 import Hamburger from '../assets/hamburger.svg'
 import FacebookIcon from '../assets/facebookIcon.png'
 import TwitterIcon from '../assets/twitterIcon.svg'
-import { Link } from 'react-scroll'
+import './navbar.css'
 
 const Container = styled.div`
   position: fixed;
   z-index: 1000;
+  top: 0;
 `
 
 const WhiteContainer = styled.div`
@@ -52,19 +55,6 @@ const MenuName = styled.span`
   @media (max-width: 650px) {
     padding-top: 20px;
     box-sizing: border-box;
-  }
-`
-const A = styled.a`
-  color: #ab0057;
-  text-decoration: none;
-  &:hover {
-    color: #ab0057;
-  }
-  @media (max-width: 650px) {
-    color: white;
-    &:hover {
-      color: white;
-    }
   }
 `
 
@@ -123,6 +113,7 @@ const menuGroup = [
   { name: 'location', url: '/' },
   { name: 'sponsors', url: '/' },
   { name: 'faqs', url: '/' },
+  // { name: 'sessions', url: '/sessions' },
   { name: 'sessions', url: '/' },
 ]
 
@@ -149,7 +140,9 @@ export default class extends Component {
         onClick={() => this.onClickBurger()}
       >
         <MenuName>
-          <A href={url}>{name.toUpperCase()}</A>
+          <RouterLink to={url} className="NavLink">
+            {name.toUpperCase()}
+          </RouterLink>
         </MenuName>
       </Menu>
     )

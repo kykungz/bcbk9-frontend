@@ -28,6 +28,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        {/* <SessionTabs /> */}
         <NavBar />
         <SocialBar />
         <Logo />
