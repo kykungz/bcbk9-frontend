@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BarLoader } from 'react-spinners'
+import { PulseLoader } from 'react-spinners'
 
 export class Loading extends Component {
   render() {
@@ -7,21 +7,21 @@ export class Loading extends Component {
       <>
         <div
           style={{
-            margin: '1em',
+            margin: '10em 0 0 0',
             display: 'flex',
             justifyContent: 'center',
           }}
         >
-          <BarLoader
+          <PulseLoader
             sizeUnit={'px'}
-            height={10}
-            width={200}
+            // height={10}
+            // width={200}
             color={'rgb(176,26,76)'}
           />
         </div>
-        <div style={{ textAlign: 'center', color: 'rgb(176,26,76)' }}>
+        {/* <div style={{ textAlign: 'center', color: 'rgb(176,26,76)' }}>
           Loading...
-        </div>
+        </div> */}
       </>
     )
   }
