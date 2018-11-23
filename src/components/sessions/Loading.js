@@ -7,14 +7,21 @@ export class Loading extends Component {
       <>
         <div
           style={{
-            margin: '10em 0 0 0',
+            margin: '1em',
             display: 'flex',
             justifyContent: 'center',
           }}
         >
-          <BarLoader sizeUnit={'px'} size={150} color={'#123abc'} />
+          <BarLoader
+            sizeUnit={'px'}
+            height={10}
+            width={200}
+            color={'rgb(176,26,76)'}
+          />
         </div>
-        <div style={{ textAlign: 'center' }}>Loading...</div>
+        <div style={{ textAlign: 'center', color: 'rgb(176,26,76)' }}>
+          Loading...
+        </div>
       </>
     )
   }

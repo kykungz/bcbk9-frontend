@@ -32,7 +32,6 @@ export class Sessions extends Component {
   }
 
   render() {
-    if (this.state.store.loading.get()) return <Loading />
     return (
       <Container>
         <>
@@ -43,17 +42,21 @@ export class Sessions extends Component {
             </div>
             <h1>SESSIONS</h1>
           </div>
-          <div className="session-body">
-            <div className="left">
-              <SessionTime store={this.state.store} />
+          {this.state.store.loading.get() ? (
+            <Loading />
+          ) : (
+            <div className="session-body">
+              <div className="left">
+                <SessionTime store={this.state.store} />
+              </div>
+              <div className="left-mobile">
+                <SessionMobileTime store={this.state.store} />
+              </div>
+              <div className="right">
+                <SessionTabs store={this.state.store} />
+              </div>
             </div>
-            <div className="left-mobile">
-              <SessionMobileTime store={this.state.store} />
-            </div>
-            <div className="right">
-              <SessionTabs store={this.state.store} />
-            </div>
-          </div>
+          )}
         </>
       </Container>
     )
