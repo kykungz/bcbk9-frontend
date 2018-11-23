@@ -8,6 +8,7 @@
   align-items: center;
   margin-bottom: 0.2em;
 }
+
 .session-header div:first-child {
   display: grid;
   grid-row-gap: 0.2em;
@@ -85,9 +86,11 @@
   border-radius: 50%;
   background-color: #ac0059;
 }
+
 .time-head > h1 {
   margin: 0px;
 }
+
 .time-head > div:last-child {
   display: flex;
   align-items: center;
@@ -133,6 +136,12 @@
   min-height: 100px;
   background-image: linear-gradient(to right, #f38b7b, #983a7a);
   position: relative;
+  transition: all ease-in-out 300ms;
+}
+
+.sessiontab:hover {
+  margin: 20px 25px;
+  transition: all ease-in-out 300ms;
 }
 
 .sessiontab .detail {
