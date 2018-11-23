@@ -15,8 +15,8 @@ const Line = styled.div`
   top: 7px;
   right: 15px;
   height: ${props => props.length};
-  border-right: 5px ${props => (props.dashed ? 'dashed' : 'solid')};
-  ${props => (props.color ? props.color : '#a31d58')};
+  border-right: 5px ${props => (props.dashed ? 'dashed' : 'solid')}
+    ${props => (props.color ? props.color : '#a31d58')};
 `
 
 const LineContainer = styled.div`
@@ -26,7 +26,7 @@ const LineContainer = styled.div`
   margin-left: ${props => props.right};
   width: 30px;
   display: flex;
-  height: ${props => props.length};
+  height: ${props => props.length}
   position: absolute;
   transform: rotate(${props => props.rotate}deg);
 `
