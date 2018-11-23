@@ -113,7 +113,8 @@ const menuGroup = [
   { name: 'location', url: '/' },
   { name: 'sponsors', url: '/' },
   { name: 'faqs', url: '/' },
-  { name: 'sessions', url: '/sessions' },
+  // { name: 'sessions', url: '/sessions' },
+  { name: 'sessions', url: '/' },
 ]
 
 export default class extends Component {
