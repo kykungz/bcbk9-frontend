@@ -5,16 +5,16 @@ import 'react-dropdown/style.css'
 
 const times = [
   {
-    label: '10.40 - 11.05',
-    value: '10.40',
+    label: '10.30 - 10:55',
+    value: '10.30',
   },
   {
-    label: '11.10 - 11.35',
-    value: '11.10',
+    label: '11.00 - 11.25',
+    value: '11.00',
   },
   {
-    label: '11.40 - 12.05',
-    value: '11.40',
+    label: '11.30 - 11:55',
+    value: '11.30',
   },
   {
     label: '13.00 - 13.25',
@@ -33,16 +33,16 @@ const times = [
     value: '14.30',
   },
   {
-    label: '15.35 - 16.00',
-    value: '15.35',
+    label: '15.30 - 15:55',
+    value: '15.30',
   },
   {
-    label: '16.05 - 16.30',
-    value: '16.05',
+    label: '16.00 - 16.25',
+    value: '16.00',
   },
   {
-    label: '16.35 – 17.00',
-    value: '16.35',
+    label: '16.30 – 16:55',
+    value: '16.30',
   },
 ]
 

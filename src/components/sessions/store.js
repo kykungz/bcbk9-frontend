@@ -20,16 +20,16 @@ export default class {
         })
         this.loading.set(false)
         const times = [
-          '10.40',
-          '11.10',
-          '11.40',
+          '10.30',
+          '11.00',
+          '11.30',
           '13.00',
           '13.30',
           '14.00',
           '14.30',
-          '15.35',
-          '16.05',
-          '16.35',
+          '15.30',
+          '16.00',
+          '16.30',
         ]
         const current_session = times.filter(
           item => parseFloat(moment().format('H.mm')) > parseFloat(item),

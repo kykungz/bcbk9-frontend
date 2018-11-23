@@ -34,7 +34,7 @@
   margin: auto;
   position: relative;
   margin-bottom: 2em;
-  padding: 1em;
+  /* padding: 1em; */
   box-sizing: border-box;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .time.active span {
-  transition: all 600ms ease-in-out;
+  transition: all 200ms ease-in-out;
   font-weight: bold;
   border: 1px solid black;
   border-radius: 5px;
@@ -98,7 +98,7 @@
 
 .line-time {
   position: absolute;
-  height: 80%;
+  height: 85%;
   width: 0.2em;
   background-color: #ac0059;
   top: 25px;
@@ -113,7 +113,7 @@
 .sessiontab-wrapper {
   margin: 0 20px;
   overflow-y: scroll;
-  height: 720px;
+  height: 665px;
 }
 
 /* .sessiontab-wrapper::-webkit-scrollbar {
@@ -136,12 +136,12 @@
   min-height: 100px;
   background-image: linear-gradient(to right, #f38b7b, #983a7a);
   position: relative;
-  transition: all ease-in-out 300ms;
+  transition: all ease-in-out 200ms;
 }
 
 .sessiontab:hover {
   margin: 20px 25px;
-  transition: all ease-in-out 300ms;
+  transition: all ease-in-out 200ms;
 }
 
 .sessiontab .detail {
