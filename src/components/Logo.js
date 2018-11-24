@@ -93,6 +93,21 @@ const DueDate = styled.h2`
   color: #a31d58;
 `
 
+const ClosedButton = styled.div`
+  margin: 30px;
+  padding: 1em 2em;
+  border-radius: 25px;
+  color: white;
+  background-image: linear-gradient(#ef867a, #c93267);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 200ms ease-in-out;
+  &:hover {
+    transition: all 200ms ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
+      0 6px 20px 0 rgba(255, 255, 255, 0.19);
+  }
+`
+
 export default class extends React.PureComponent {
   state = {
     loading: true,
@@ -105,8 +120,50 @@ export default class extends React.PureComponent {
       })
     }, 2000)
   }
-  render() {
+
+  getButton() {
     const eventDate = '25112018'
+    let button
+    if (
+      moment()
+        .format('DMY')
+        .localeCompare(eventDate) >= 0
+    ) {
+      button = (
+        <Link to="/sessions">
+          <RegisterButton>
+            view sessions
+            <sup style={{ margin: '10px', color: 'rgb(244,177,161)' }}>new</sup>
+          </RegisterButton>
+        </Link>
+      )
+    } else if (
+      moment()
+        .format('DMYHH')
+        .localeCompare('2411201812') >= 0
+    ) {
+      button = (
+        <ClosedButton>
+          Registration Closed
+          <br />
+          Walk Ins Welcome
+        </ClosedButton>
+      )
+    } else {
+      button = (
+        <a
+          href="https://goo.gl/Shs6VY"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <RegisterButton>register now</RegisterButton>
+        </a>
+      )
+    }
+    return button
+  }
+
+  render() {
     return (
       <Container>
         <DetailContainer>
@@ -119,26 +176,7 @@ export default class extends React.PureComponent {
             </LogoContainer>
           )}
           <DueDate>25 November 2018</DueDate>
-          {moment()
-            .format('DMY')
-            .localeCompare(eventDate) >= 0 ? (
-            <Link to="/sessions">
-              <RegisterButton>
-                view sessions
-                <sup style={{ margin: '10px', color: 'rgb(244,177,161)' }}>
-                  new
-                </sup>
-              </RegisterButton>
-            </Link>
-          ) : (
-            <a
-              href="https://goo.gl/Shs6VY"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <RegisterButton>register now</RegisterButton>
-            </a>
-          )}
+          {this.getButton()}
         </DetailContainer>
       </Container>
     )
