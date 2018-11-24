@@ -66,7 +66,7 @@ class SessionTime extends Component {
     const time_comp = times.map((item, index) => {
       if (!item.value)
         return (
-          <div className="time-head">
+          <div className="time-head" key={`${item.name + index}`}>
             <h1 key={`${item.name + index}`}>{item.name}</h1>
             <div>
               <div />

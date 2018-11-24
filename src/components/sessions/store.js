@@ -7,7 +7,7 @@ export default class {
     this.loading.set(true)
     const sessions = this.sessions
     axios
-      .get('https://bcbk-api.herokuapp.com/sessions')
+      .get('https://bcbk-api2018.herokuapp.com/sessions')
       .then(res => {
         res.data.forEach(item => {
           const key = moment(item.start)

@@ -139,10 +139,10 @@
   transition: all ease-in-out 200ms;
 }
 
-.sessiontab:hover {
+/* .sessiontab:hover {
   margin: 20px 25px;
   transition: all ease-in-out 200ms;
-}
+} */
 
 .sessiontab .detail {
   padding: 10px;
