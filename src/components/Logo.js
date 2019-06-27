@@ -54,6 +54,7 @@ const LogoContainer = styled.div`
   flex-direction: column;
   padding: 0 3em;
   min-height: 370px;
+  max-height: 0;
   width: 100vw;
   box-sizing: border-box;
 
